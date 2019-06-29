@@ -7,7 +7,7 @@
 
 # Site settings
 title: 张瀚元的专属博客
-brief-intro: Passionate Coder
+brief-intro: Passionate & Hardworking Coder
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ChesterCheung.github.io" # the base hostname & protocol for your site
 
@@ -16,11 +16,11 @@ permalink: /:year/:month/:day/:title/
 # other links
 twitter_username: #gaohaoyang126
 facebook_username: #gaohaoyang.water
-github_username: Chester Cheung
+github_username: ChesterCheung
 email: Cheung_zhy@csu.edu.cn
 weibo_username: Chester Cheung
 zhihu_username: Chester Cheung
-linkedIn_username: 张瀚元
+linkedIn_username: ChesterCheung
 dribbble_username:
 
 description_footer: 来自张瀚元的个人专栏！
