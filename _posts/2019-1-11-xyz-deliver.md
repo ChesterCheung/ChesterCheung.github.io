@@ -16,7 +16,7 @@ author: Chester Cheung
 
 
 
-**1.基本数据类型：
+1.**基本数据类型：
 **
 
 （每一种基本类型都对应有一个封装类）
@@ -27,7 +27,7 @@ Byte、Short、Integer、Long、Boolean、Float、Double、Character
 
 
 
-**2.引用类型：类、抽象类、接口
+2.**引用类型：类、抽象类、接口
 **
 Class、abstract class、interface
 
@@ -73,7 +73,7 @@ Class、abstract class、interface
 
 	public static void main(String[] args) {
 
- 	  		int a = 5;
+			int a = 5;
 		
     	fun(a);
 		
@@ -88,6 +88,7 @@ Class、abstract class、interface
 		
 }
 	}
+
 
 输出的结果是5
 
@@ -120,15 +121,13 @@ int b = new int [] {1,2,2,3,3};
 
 		Student stu2 = new Student();
 
-	
-	stu2.name = "初中生";
+		stu2.name = "初中生";
 
 		stu2.score = 80;
 
 
 		System.out.println(stu1.toString());
-	
-	System.out.println(stu2.toString());
+		System.out.println(stu2.toString());
 
 
 		stu2 = stu1;

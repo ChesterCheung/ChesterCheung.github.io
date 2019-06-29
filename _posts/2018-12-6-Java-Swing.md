@@ -2,7 +2,7 @@
 layout: post
 title:  "简单Swing界面设计"
 categories: Java
-tags:  Java 
+tags:  Java Swing
 author: Chester Cheung
 ---
 
