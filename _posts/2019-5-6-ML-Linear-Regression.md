@@ -18,6 +18,11 @@ author: Chester Cheung
 
 ](http://cs229.stanford.edu/notes-spring2019/cs229-notes1.pdf)
 
+
+
+
+
+
 我们先来看一个简单的例子，通过房间的面积和卧室的数目来预测房价。那么这里的X就是属于R^2的维向量，我们把x1设为居住面积，x2设为卧室的数量(初期把问题简化，做到最小可实现)。
 
 

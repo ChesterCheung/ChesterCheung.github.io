@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title:  "Web网络基础概述"
-categories: Web development
+categories: Web
 tags:  Web HTTP
 author: Chester Cheung
 ---
