@@ -3,6 +3,7 @@ layout: post
 title:  "Java视频特效处理/PC版美颜相机"
 categories: Java
 tags:  Java openCV image
+author: Chester Cheung
 ---
 
 * content

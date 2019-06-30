@@ -81,7 +81,7 @@ public Color color;
 public Graphics g;
 	
 public ImageIcon icon;
-
+	
 	
 
 public Data(int x1,int y1,int x2,int y2,Color color,String type) {

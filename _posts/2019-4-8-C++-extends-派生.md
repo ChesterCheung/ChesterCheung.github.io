@@ -3,6 +3,7 @@ layout: post
 title:  "扫除C++继承/派生难点、痛点"
 categories: C++
 tags: C++ 继承 派生
+author: Chester Cheung
 ---
 
 * content
