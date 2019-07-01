@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title:  "机器学习必备之Pandas(一)"
-categories: Machine Learning
+categories: MachineLearning
 tags: ML Pandas Python
 author: Chester Cheung
 ---

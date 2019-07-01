@@ -1,8 +1,8 @@
 ﻿---
 layout: post
 title:  "Tensorflow深度学习"
-categories: Machine Learning
-tags: ML DL Tensorflow AI
+categories: MachineLearning
+tags: ML DL Tensorflow AI Python
 author: Chester Cheung
 ---
 
@@ -18,6 +18,11 @@ author: Chester Cheung
 
 
 隐藏层是我们设计的网络中最重要的部分，隐藏层可能有一层或多层，每一层都会有一个或多个神经元，叫做神经元节点或隐藏节点。
+
+
+
+
+
 
 
 

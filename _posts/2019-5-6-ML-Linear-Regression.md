@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title:  "ML Linear Regrssion"
-categories: Machine Learning
+categories: MachineLearning
 tags: ML AI Regression
 author: Chester Cheung
 ---

@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title:  "ML--Perceptron感知机"
-categories: Machine Learning
+categories: MachineLearning
 tags: ML DL AI Perceptron
 author: Chester Cheung
 ---

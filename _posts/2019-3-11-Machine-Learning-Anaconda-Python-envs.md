@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title:  "机器学习之Python&Anaconda环境配置问题"
-categories: Machine Learning
+categories: MachineLearning
 tags:  ML Python
 author: Chester Cheung
 ---

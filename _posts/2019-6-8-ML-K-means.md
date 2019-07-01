@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title:  "ML -- k近邻值"
-categories: Machine Learning
+categories: MachineLearning
 tags: ML DL k-means
 author: Chester Cheung
 ---

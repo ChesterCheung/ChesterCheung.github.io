@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title:  "ML Basic Definition"
-categories: Machine Learning
+categories: MachineLearning
 tags: ML
 author: Chester Cheung
 ---

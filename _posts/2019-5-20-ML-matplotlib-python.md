@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title:  "机器学习必备之matplotlib——数据可视化分析"
-categories: Machine Learning
+categories: MachineLearning
 tags: ML AI matplotlib Python
 author: Chester Cheung
 ---

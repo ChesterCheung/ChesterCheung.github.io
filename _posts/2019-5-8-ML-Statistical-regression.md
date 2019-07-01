@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title:  "ML Three Elements of Statistical Learning"
-categories: Machine Learning
+categories: MachineLearning
 tags: ML Statistical AI
 author: Chester Cheung
 ---
