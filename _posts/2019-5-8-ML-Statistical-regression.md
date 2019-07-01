@@ -9,7 +9,6 @@ author: Chester Cheung
 * content
 {:toc}
 
-
 统计学习的三要素：模型、策略、算法，简单表示为：
 
 

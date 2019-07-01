@@ -1,0 +1,248 @@
+﻿---
+layout: post
+title:  "机器学习必备之Pandas(二)"
+categories: Machine Learning
+tags: ML Pandas Python
+author: Chester Cheung
+---
+
+* content
+{:toc}
+
+
+ ## Pandas
+
+> 函数应用和映射
+
+numpy有一些ufuncs(即元素级数组方法)，也可以用于操作pandas对象：
+
+![1](https://img-blog.csdnimg.cn/20190414225648487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+另一个常见的操作就是，将函数应用到由各行或各列所形成的一维数组上，DataFrame的apply方法即可实现这个功能：
+
+	   [In] f = lambda x: x.max() - x.min()
+	[In] frame.apply(f)
+	[Out] a    1.515260
+		b    2.424369
+		c    2.014877
+		dtype: float64
+
+但是许多最为常见的数组统计功能都被实现成了DataFrame方法，比如sum和mean，所以无需使用apply方法。
+
+除此以外，传递给apply的函数还可以返回由多个值组成的Series：
+
+![2](https://img-blog.csdnimg.cn/20190414231923373.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+> 排序和排名
+
+根据条件对数据集进行排序也是一种重要的内置运算，要对行或列进行排序(按字典顺序)，可用sort_index方法，他将返回一个已排序的新对象：
+
+![3](https://img-blog.csdnimg.cn/20190414232311998.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+而对于DataFrame则可以根据任意一个轴上的索引进行排序(数据默认是根据升序排列的，但也可以按照降序排列，只需要在属性加上ascending=False即可)：
+
+![4](https://img-blog.csdnimg.cn/20190414232447829.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+如果想要按值对Series进行排序，可以用他的order方法：
+
+![5](https://img-blog.csdnimg.cn/20190414233315401.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+在进行排序时，任何的缺失值默认都会被放到Series的末尾：
+
+![6](https://img-blog.csdnimg.cn/20190414233400578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+若要根据多个列进行排序，传入名称的列表即可：
+
+![7](https://img-blog.csdnimg.cn/20190414233557617.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+排名(ranking)与排序的关系密切，且他会增设一个排名值(从1开始，一直到数组中有效数据的个数)，他与Numpy.argsort产生的间接排序索引相差不多，只不过他可以根据某种规则破坏平级关系。默认状态下，rank是通过“为各组分配一个平均排名”的方式来破坏平级关系的，这个是什么意思呢？还真的不好理解，所以要解释一下：
+
+
+![8](https://img-blog.csdnimg.cn/2019041423460471.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+对Series中的每一个元素进行排序，如果遇到相同的数值，就在相同的数值之间取一个平均数，假如有2个4应该排在第三位，那么就把他们两个的位数取一个平均值，取到了3.5的排名。
+
+当然也可以通过数值在原数据中的顺序给出排名：
+
+![9](https://img-blog.csdnimg.cn/20190414234901785.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+下表中列出了所有用于破坏平级关系的method选项：
+
+![10](https://img-blog.csdnimg.cn/2019041423535881.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+> 带有重复值的轴索引
+
+到目前为止，所有的范例都有唯一的轴标签，虽然很多函数都要求标签唯一，但这并不是强制性的：
+
+![11](https://img-blog.csdnimg.cn/20190414235653209.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+对于带有重复值的索引，数据的选择方式会有所不同：如果某个索引对应多个值，则会返回一个Series；而对应单个值的，则会返回一个标量值。
+
+在对DataFrame的行进行索引时也是如此：
+
+![12](https://img-blog.csdnimg.cn/2019041500180174.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+> 汇总和计算描述统计
+
+
+
+pandas对象拥有一组常用的数学和统计学方法，其实机器学习、数据挖掘本质上就是统计学科，其中大部分都属于约简和汇总统计，用于从Series中提取单个值(如sum或mean)，或者从DataFrame的行或列中提取一个Series。跟对应的Numpy数组方法相比，他们都是基于美誉缺失数据的假设构建的。
+调用DataFrame的sum方法将会返回一个含有小计的Series：
+
+(默认的axis=0是按照列进行求和运算)
+
+![13](https://img-blog.csdnimg.cn/20190415003034286.png)
+
+其中的np.NAN的值会被自动排除，除非整个行或列都是NaN，也可以通过skipna属性的值禁用该值：
+
+![14](https://img-blog.csdnimg.cn/20190415003301912.png)
+
+下面列出一些简约方法的常用选项：
+
+![15](https://img-blog.csdnimg.cn/2019041500335672.png)
+
+有些方法是返回的间接统计(比如达到最小值或最大值的索引)：
+
+![16](https://img-blog.csdnimg.cn/20190415003728518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+这里关于统计汇总的相关方法一并给出，在应用的时候再具体学习：
+
+![17](https://img-blog.csdnimg.cn/20190415004132179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+> 相关系数与协方差
+
+
+
+有些汇总的数据就是通过参数数据计算出来的。Series的corr方法用于计算两个Series中重叠的、非NaN的、按索引对齐的值的**相关系数**(相关关系是一种非确定性的关系，相关系数是研究变量之间线性相关程度的量)。
+
+
+与此类似，cov用于计算**协方差**(在概率论和统计学中，协方差用于衡量两个变量的总体误差)。
+利用DataFrame的corrwith方法，可以计算其行或列跟另外一个Series或DataFrame之间的相关系数，传入一个Series将会返回一个相关系数值Series(针对各列进行计算);
+
+
+
+> 唯一值、值计数、成员资格方法
+
+![18](https://img-blog.csdnimg.cn/20190415011132724.png)
+
+> 处理缺失数据
+
+缺失数据在大部分的数据挖掘比赛中是非常常见的，比如泰坦尼克号的比赛中就给出了不少的部分缺失数据。而pandas的设计目标之一就是让缺失数据的处理尽量轻松点，之前我们看到的pandas对象上的描述统计都是排除了缺失数据的。
+
+
+pandas使用浮点值NaN来表示浮点和非浮点数组中的缺失数据，但他也仅仅是一个便于被检测出来的标记而已(Python内置的None值也会被当作NaN处理)：
+pandas中的NaN表现形式不一定是最优的，但他确实挺可靠的
+
+![19](https://img-blog.csdnimg.cn/2019041501252394.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+上面的是关于NaN的一些简单处理方法。
+
+> 过滤掉缺失数据
+
+使用人工手动过滤掉缺失数据是一种笨办法，但是确实挺有效的(前提是数据量不是太大)，但是dropna可能更实用一些。
+
+对于一个Series，dropna返回一个仅含非空数据和其索引值的Series：
+
+![20](https://img-blog.csdnimg.cn/20190415012922712.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+而对于一个DataFrame来说就有点复杂了。我们希望dropna最好默认丢弃掉全NaN或者含有NaN的行或列，但是事实上，dropna丢弃掉任何含有NaN缺失值的行，(传入how='all’将只丢弃全为NaN的那些行)。
+
+
+如果要用这种方式来丢弃列，只需传入axis=1就可以了。
+另一个滤除DataFrame行的问题涉及时间序列数据；如果想要留下一部分的观测数据，可以用thresh参数实现这个目的，他可以留下想要有几个值的某些行或列：
+
+
+![21](https://img-blog.csdnimg.cn/20190415013534299.png)
+
+这里的thresh想要留下有3个值存在的行，所以属性中加入thresh=3就可以达到目的了。
+
+
+
+> 填充缺失数据
+
+
+
+当你不想滤除缺失数据的时候，害怕会丢弃跟他相关的其他的数据，而是希望通过其他的方式来填补缺失的数据。这个时候，fillna方法就是最主要的函数了，通过一个常数调用fillna就会将缺失值替换为那个常数：
+
+![22](https://img-blog.csdnimg.cn/20190415013950372.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+在这里给出fillna函数的相关参数：
+
+![23](https://img-blog.csdnimg.cn/20190415014309279.png)
+
+> 层次化索引
+
+就是将层次的归属关系讲清楚，比如画树状图，让人一看就明白
+
+层次化索引是pandas一项非常重要的功能，他的作用是使你能在一个轴上拥有多个索引级别，简单说就是，他能使你以低维度形式处理高维度的数据，显然这样能提高运算的速度。
+
+![24](https://img-blog.csdnimg.cn/20190415014938552.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+这就是带有MultiIndex索引的Series格式化输出形式，索引之间的间隔表示直接使用上面的标签:
+
+![25](https://img-blog.csdnimg.cn/20190415014952324.png)
+
+对于层次化索引的对象，选取数据子集的操作很简单，甚至还可以在数组的“内层”中进行选取，这些操作都ok；
+
+层次化索引在数据重塑和基于分组的操作(生成透视表)中扮演者非常重要的角色，比方说，这段数据可以通过其unstack方法被重新安排到一个DataFrame中：
+
+![26](https://img-blog.csdnimg.cn/20190415015636807.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+就是可以将层次化索引数组转换成DataFrame的类似二维数组的形式；
+
+unstack的逆运算是stack：
+
+![27](https://img-blog.csdnimg.cn/2019041501574556.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+对于一个DataFrame来说，每条轴都可以有分层索引，这个操作就很秀了，不用多说大家也能想象到。
+
+其中各层都可以有名字，可以是字符串也可以是别的Python对象。如果指定了名字，他就会在控制台中输出(千万别把索引名和轴标签弄混了！！！)：
+
+![28](https://img-blog.csdnimg.cn/20190415020218233.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+这里frame.index.names 是索引名
+
+
+frame.columns.names是轴标签
+
+
+甚至可以单独创建层次化索引然后复用，上面的DataFrame中的列就可以这样创建：
+
+![29](https://img-blog.csdnimg.cn/20190415020503531.png)
+
+
+
+> 
+重排分级顺序
+
+
+
+有些时候，需要重排某笤帚上面各个级别的顺序，或根据指定级别上的值对数据进行重新排序。swaplevel方法就是接受2个级别编号或名称，返回了一个互换了级别的新对象(数据保持不变)：
+
+
+![30](https://img-blog.csdnimg.cn/20190415020742124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+而sortlevel则根据单个级别中的值对数据进行排序(一定的固定顺序)，交换级别时，有时也会用到sortlevel，这样的结果就是有序的了。
+
+![31](https://img-blog.csdnimg.cn/20190415021023997.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+> 根据级别进行汇总统计
+
+对DataFrame和Series的汇总统计都有一个level选项，他用特定在某条轴上求和的级别。
+
+![32](https://img-blog.csdnimg.cn/20190415021243277.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+set_index函数的作用：
+
+![33](https://img-blog.csdnimg.cn/20190415021500897.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+默认情况下，那些转换的列会被DataFrame从原来的位置移走，但也可以将其保留下来
+
+![34](https://img-blog.csdnimg.cn/20190415021710916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+reset_index的功能和set_index刚好相反，层次化的索引的级别会被转移到列里面：
+
+![35](https://img-blog.csdnimg.cn/20190415021810849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+这里就先介绍到这里，其他的部分再进行些许的补充。
+
