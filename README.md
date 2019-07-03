@@ -8,7 +8,7 @@
 
 **[中文版 Chinese README 请点击这里 🇨🇳](https://github.com/Gaohaoyang/gaohaoyang.github.io/blob/master/README-zh-cn.md)**
 
-**My Blog Url: [https://chestercheung.github.io/](https://chestercheung.github.io/)**. If you like this theme, you can give me a star to encourage me. Welcome everyone to use it.
+**My Blog Url: [https://zhychestercheung.github.io/](https://chestercheung.github.io/)**. If you like this theme, you can give me a star to encourage me. Welcome everyone to usez it.
 
 ## Content
 
