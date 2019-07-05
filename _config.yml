@@ -9,7 +9,7 @@
 title: 张瀚元的专属博客
 brief-intro: Passionate & Hardworking Coder
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ChesterCheung.github.io" # the base hostname & protocol for your site
+url: "https://zhyChesterCheung.github.io" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
