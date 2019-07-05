@@ -43,9 +43,9 @@ author: Chester Cheung
 
 		return image;
 	
-}
+	}
 	
-public int [][] getRGBarrays () {
+	public int [][] getRGBarrays () {
 	
 	// TODO Auto-generated method stub
 
@@ -53,9 +53,9 @@ public int [][] getRGBarrays () {
 
 	}
 	
-public void Capture() {
+	public void Capture() {
 	
-	Rectangle rect = new Rectangle(0,0,frame.getHeight(),frame.getWidth());
+		Rectangle rect = new Rectangle(0,0,frame.getHeight(),frame.getWidth());
 	
 		image = robot.createScreenCapture(rect);
 
@@ -71,7 +71,7 @@ public void Capture() {
 
 		}
 	
-}
+	}
 
 同时还要，继承JFrame类，在Drawing的主函数中重写paint(Graphics g)方法，别忘记使用super调用父类中的代码，然后再添加新的代码。
 
@@ -91,7 +91,7 @@ public void Capture() {
 	int arrays[][] = dl.getRGBarrays();
 
 		
-if (arrays != null) {
+		if (arrays != null) {
 
 			for(a = 0; a <arrays.length; a++) {
 
@@ -102,16 +102,14 @@ if (arrays != null) {
 				g.setColor(color);
 
 					g.drawLine(a, b, a, b);				
-		}
+				}
 
 			}
 
 		}
 
-	
+	}
 
-}
-
-但这种方法实现重绘有一个缺点，或者说还未实现的一个问题，就是：
+### 但这种方法实现重绘有一个缺点，或者说还未实现的一个问题，就是：
 
 Drawing在调用方法重绘时，将界面上的所有内容都进行了重绘，即从电脑屏幕左上角开始进行重绘，会画上很多没有用的信息，暂时不能从画图界面的左上角开始重绘，这个问题仍然有待解决，解决后会在本博客上面进行补充说明，如果大家谁有好的解决方法，也希望能提出您的宝贵意见，大家互相交流经验。

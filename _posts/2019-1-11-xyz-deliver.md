@@ -16,8 +16,7 @@ author: Chester Cheung
 
 
 
-1.**基本数据类型：
-**
+1.**基本数据类型：**
 
 （每一种基本类型都对应有一个封装类）
 
@@ -27,8 +26,7 @@ Byte、Short、Integer、Long、Boolean、Float、Double、Character
 
 
 
-2.**引用类型：类、抽象类、接口
-**
+2.**引用类型：类、抽象类、接口**
 Class、abstract class、interface
 
 不管是你自己定义的类，还是Java给你提供的类，本质上都是属于引用类型，他们本身都继承有一个共同的父类。
@@ -85,8 +83,7 @@ Class、abstract class、interface
 		Public  static void fun(int a) {
 
 			a += 1;
-		
-}
+		}
 	}
 
 
@@ -97,11 +94,11 @@ Class、abstract class、interface
 
 引用传递适用于Java的引用数据类型。除此以外，需要格外注意的是，数组也是属于引用数据类型。简单两个例子，
 
-
+```
 int a = new int [10];
 
 int b = new int [] {1,2,2,3,3};
-
+```
 
 
 ### 注意，虽然String也是类，本应该属于引用传递，但是String类除外。
@@ -141,7 +138,7 @@ int b = new int [] {1,2,2,3,3};
 
 		}
 	
-}
+	}
 
 对相关内容做一个**注释**：Student stu1:声明一个对象名，叫做stu1
 = : 把内存空间的首地址赋给stu1

@@ -54,38 +54,38 @@ author: Chester Cheung
 
 	import tensorflow as tf
 	
-x1 = tf.placeholder(dtype=tf.float32)
+	x1 = tf.placeholder(dtype=tf.float32)
 	
-x2 = tf.placeholder(dtype=tf.float32)
+	x2 = tf.placeholder(dtype=tf.float32)
 
 	x3 = tf.placeholder(dtype=tf.float32)
 
 	
-w1 = tf.Variable(0.1,dtype=tf.float32)
+	w1 = tf.Variable(0.1,dtype=tf.float32)
 	
-w2 = tf.Variable(0.1,dtype=tf.float32)
+	w2 = tf.Variable(0.1,dtype=tf.float32)
 	
-w3 = tf.Variable(0.1,dtype=tf.float32)
+	w3 = tf.Variable(0.1,dtype=tf.float32)
 	
 
-n1 = x1*w1
+	n1 = x1*w1
 	
-n2 = x2*w2
+	n2 = x2*w2
 
 	n3 = x3*w3
 	
 
-y = n1+n2+n3
+	y = n1+n2+n3
 	
 
-sess = tf.Session()
+	sess = tf.Session()
 	
-init = tf.global_variables_initializer()
+	init = tf.global_variables_initializer()
 
 	sess.run(init)
 	
 
-result = sess.run([x1,x2,x3,w1,w2,w3,y], feed_dict={x1:90,x2:80,x3:70})
+	result = sess.run([x1,x2,x3,w1,w2,w3,y], feed_dict={x1:90,x2:80,x3:70})
 
 	print(result)
 
@@ -101,13 +101,11 @@ result = sess.run([x1,x2,x3,w1,w2,w3,y], feed_dict={x1:90,x2:80,x3:70})
 上述代码中
 
 
-x1 = tf.placeholder(dtype=tf.float32)
+	x1 = tf.placeholder(dtype=tf.float32)
 
+	x2 = tf.placeholder(dtype=tf.float32)
 
-x2 = tf.placeholder(dtype=tf.float32)
-
-
-x3 = tf.placeholder(dtype=tf.float32)
+	x3 = tf.placeholder(dtype=tf.float32)
 
 
 我们在训练这个模型的时候，将x1，x2，x3作为输入数据输入到模型中，这种等待模型运行时才会输入的节点，我们称为占位符placeholder，就是在编写程序时还不确定输入什么数据，在模型运行时才知道输入什么数的就是占位符，相当于一个可以随时替换掉的临时变量。
@@ -124,16 +122,11 @@ x3 = tf.placeholder(dtype=tf.float32)
 
 输出层也不难理解，就让三个隐藏层相加就能得到最后的结果。
 
-
-
 > ## 运用神经网络进行运算
 
-
-我们对神经网络的定义已经完成，下面要看如何在这个神经网络中输入数据并进行运算得到结果。
+我们对神经网络的定义已经完成，下面要看如何在这个神经网络中输入数据并进行运算得到结果。	
 	
-	
-sess = tf.Session()
-
+	sess = tf.Session()
 
 这句语句定义了一个sess变量，其中包含了一个Tensorflow的会话session对象，可以简单把他看作是管理神经网络的一个对象，或者是之前建立的神经网络的一个实例化对象，有了他我们的神经网络就可以正常运行了。
 
@@ -143,20 +136,16 @@ sess = tf.Session()
 
 
 会话对象管理神经网络的第一步，就是先将所有的可变参数初始化，也就是给所有的可变参数一个初始值
-
 	
 
-init = tf.global_variables_initializer()
+	init = tf.global_variables_initializer()
 
 	sess.run(init)
 
-
 sess.run的意思就是在sess这个函数中运行init这个初始化函数；具体给每个可变函数赋什么初值，是我们刚才定义的w1，w2，w3这三个可变参数决定的。或者也可以将刚刚的语句合并起来：
-
 	
 
-sess.run(tf.global_variables_initializer())
-
+	sess.run(tf.global_variables_initializer())
 
 
 然后，我们再次执行神经网络的计算：
@@ -199,57 +188,57 @@ sess.run(tf.global_variables_initializer())
 
 	
 
-x1 = tf.placeholder(dtype=tf.float32)
+	x1 = tf.placeholder(dtype=tf.float32)
 	
-x2 = tf.placeholder(dtype=tf.float32)
+	x2 = tf.placeholder(dtype=tf.float32)
 	
-x3 = tf.placeholder(dtype=tf.float32)
+	x3 = tf.placeholder(dtype=tf.float32)
 
 
 	yTrain = tf.placeholder(dtype=tf.float32)
 
 	
 
-w1 = tf.Variable(0.1,dtype=tf.float32)
+	w1 = tf.Variable(0.1,dtype=tf.float32)
 
 	w2 = tf.Variable(0.1,dtype=tf.float32)
 	
-w3 = tf.Variable(0.1,dtype=tf.float32)
+	w3 = tf.Variable(0.1,dtype=tf.float32)
 
 	
 
-n1 = x1*w1
+	n1 = x1*w1
 	
-n2 = x2*w2
+	n2 = x2*w2
 
 	n3 = x3*w3
 
 	
-y = n1+n2+n3
+	y = n1+n2+n3
 
 
 	loss = tf.abs(y-yTrain)	 #损失函数，用来表示误差值
 	
 
-optimizer = tf.train.RMSPropOptimizer(0.001) #优化器，可以调整可变参数
+	optimizer = tf.train.RMSPropOptimizer(0.001) #优化器，可以调整可变参数
 	
 
-train = optimizer.minimize(loss) #将可变参数传入优化器中，按照最小化原则调整可变参数
+	train = optimizer.minimize(loss) #将可变参数传入优化器中，按照最小化原则调整可变参数
 	
 
-sess = tf.Session()
+	sess = tf.Session()
 	
-init = tf.global_variables_initializer()
+	init = tf.global_variables_initializer()
 
 	sess.run(init)
 	
 
-result = sess.run([train,x1,x2,x3,w1,w2,w3,y,yTrain,loss], feed_dict={x1:90,x2:80,x3:70,yTrain:85})
+	result = sess.run([train,x1,x2,x3,w1,w2,w3,y,yTrain,loss], feed_dict={x1:90,x2:80,x3:70,yTrain:85})
 	
-print(result)
+	print(result)
 	result = sess.run([train,x1,x2,x3,w1,w2,w3,y,yTrain,loss], feed_dict={x1:98,x2:95,x3:87,yTrain:96})
 	
-print(result)
+	print(result)
 
 
 
@@ -271,9 +260,7 @@ print(result)
 
 
 
-> ## 
-
-简化深度学习神经网络
+> ## 简化深度学习神经网络
 
 
 **先看下张量的定义**：
@@ -286,9 +273,7 @@ print(result)
 注意在Tensorflow中用print输出张量和可变函数时，并不会输出其中的具体数值，而是输出他们对应的操作和数据类型等信息。如果要查看他们的具体数值，需要在训练过程中用sess.run函数获得的返回值来查看。
 
 
-
 > ## 通过向量重新组织输入数据，简化模型
-
 
 还是之前的例子，我们如果要再德育、智育、体育的基础上再加参考的其他指标，比如艺术分数，输入层需要增加节点x1，隐藏层也需要增加一个n4节点，其实整套逻辑没有变，但还要去修改整套模型，这就很麻烦了。
 
@@ -308,9 +293,9 @@ print(result)
 	w = tf.Variable(tf.zeros([3]), dtype=tf.float32)
 	
 
-n = x * w
+	n = x * w
 	
-y = tf.reduce_sum(n)
+	y = tf.reduce_sum(n)
 
 	loss = tf.abs(y-yTrain)
 
@@ -318,22 +303,22 @@ y = tf.reduce_sum(n)
 	optimizer = tf.train.RMSPropOptimizer(0.001)
 	
 
-train = optimizer.minimize(loss)
+	train = optimizer.minimize(loss)
 	
-sess = tf.Session()
+	sess = tf.Session()
 	
-init = tf.global_variables_initializer()
+	init = tf.global_variables_initializer()
 
 
 	sess.run(init)
 	
 
-result = sess.run([train,x,w,y,loss], feed_dict={x:[90,80,70],yTrain:85})
+	result = sess.run([train,x,w,y,loss], feed_dict={x:[90,80,70],yTrain:85})
 
 	print(result)
 	
 
-result = sess.run([train,x,w,y,loss], feed_dict={x:[98,95,87],yTrain:96})
+	result = sess.run([train,x,w,y,loss], feed_dict={x:[98,95,87],yTrain:96})
 
 	print(result)
 
@@ -366,14 +351,11 @@ tf.reduce_sum函数的作用是把作为他的参数的向量中所有维度的�
 
 后面对模型的训练过程基本是一样的，唯一不同在于输入数据时，所有的输入都简化成了一个x，所以feed_dict也要相应变化。
 
-
-
 	result = sess.run([train,x,w,y,loss], feed_dict={x:[90,80,70],yTrain:85})
 
+> ## 简化后的神经网络模型
 
-> ## 简化后的神经网络
 
-模型
 按照之前的简化步骤，得到简化后的神经网络模型：
 
 ![4](https://img-blog.csdnimg.cn/20190524120422580.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)

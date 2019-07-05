@@ -30,9 +30,7 @@ author: Chester Cheung
 我们所绘制图形的数据都存储在内存中，在创建窗体时我们已经定义了窗体的大小，如果我们再次改变窗体大小的时候，原来的窗体就不满足显示的需求。这时候就会自动调用组件的绘制方法，将窗体上所有的组件再重新绘制一次，但是不会执行我们所绘制的图形的代码，所以我们看到的就是绘图板界面还在，但是界面上之前绘制的图形消失了。操作系统重绘窗体上的组件时，调用了paint方法，这个方法是定义在JFrame和JPanel中都有的，叫做
 
 
-
-Public void paint (Graphics g) { }
-
+	Public void paint (Graphics g) { }
 
 
 想要改变这个方法，就必须定义一个类继承组件，然后才能重写paint方法。最重要的一点就是，该类必须继承JFrame类或是JPanel类，不然不可以重写paint方法。
@@ -63,10 +61,10 @@ Public void paint (Graphics g) { }
 
 实际上，仅仅需要定义数组来存储图形的数据作为内存，但是图形有很多种类型，20,30,100，每一种类型定义一个数组，数组量就太庞大了，怎么减少数组的数量？有两种比较可行的方法：
 
-1.定义一个图形父类，不同的图形就定义这个类的子类，数组类型就可以使用图形父类的；
+> 1.定义一个图形父类，不同的图形就定义这个类的子类，数组类型就可以使用图形父类的；
 
 
-2.定义一个类，使用方法重载来解决，数组类型就是该类。
+> 2.定义一个类，使用方法重载来解决，数组类型就是该类。
 那么在什么时候开始重新画呢？窗体改变大小后会自动调用paint方法，此时需要将paint方法进行重写，在重写的重绘方法中，把存储在数组(内存)中的图形再画一次。
 
 三、具体实现：
@@ -76,15 +74,13 @@ Public void paint (Graphics g) { }
 
 	public String type;
 	
-public Color color;
+	public Color color;
 	
-public Graphics g;
+	public Graphics g;
 	
-public ImageIcon icon;
+	public ImageIcon icon;
 	
-	
-
-public Data(int x1,int y1,int x2,int y2,Color color,String type) {
+	public Data(int x1,int y1,int x2,int y2,Color color,String type) {
 
 		this.x1 = x1;
 
@@ -128,8 +124,7 @@ public Data(int x1,int y1,int x2,int y2,Color color,String type) {
 	
 	System.out.println("已经进行了重绘");
 
-		
-//添加循环语句，将之前所的绘图全部进行重绘，等到输出为空时结束循环
+	//添加循环语句，将之前所的绘图全部进行重绘，等到输出为空时结束循环
 	
 		for (int i = 0; i<array.length; i++) {
 
