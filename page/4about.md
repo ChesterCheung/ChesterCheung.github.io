@@ -35,7 +35,7 @@ CS、AI、CV、NLP、ML，刚接触的时候说实话我也是一脸懵逼，但
 
 ## 联系我
 
-* GitHub：[Chester Cheung](https://github.com/ChesterCheung)
+* GitHub：[Chester Cheung](https://github.com/zhyChesterCheung)
 * email：zhy_Cheung@csu.edu.cn
 * QQ number：2640617395
 * [Weibo](http://weibo.com/ChesterCheung)
