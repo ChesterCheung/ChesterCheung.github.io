@@ -40,7 +40,7 @@ CS、AI、CV、NLP、ML，刚接触的时候说实话我也是一脸懵逼，但
 * QQ number：2640617395
 * [Weibo](http://weibo.com/ChesterCheung)
 * [知乎](https://www.zhihu.com/people/ChesterCheung)
-* [Facebook](https://www.facebook.com/ChesterCheung)
+* [Facebook](https://www.facebook.com/chester.cheung.3538)
 * [Twitter](https://twitter.com/ChesterCheung)
 
 ## Comments
