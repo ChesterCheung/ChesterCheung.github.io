@@ -37,7 +37,7 @@ tags: Java IT
 关于Java中类的格式，我们定义的类就是一种数据类型
 
 
-```
+```java
 	public class 类名{
 
 		public 数据类型 属性名；
@@ -47,7 +47,7 @@ tags: Java IT
 		}
 
 	}
-```java
+```
 		
 注意：Java中类是模板，是编程的基本单位。
 还有实例化对象和调用属性方法的格式
