@@ -33,10 +33,12 @@ author: Chester Cheung
 
 这里面其中的：
 
+```php
 	information_schema,
 	Mysql,
 	Test,
 	Performation_schema
+```
 
 这三个库是mysql安装后自带的，不用去使用他们就ok，接下来创建自己的数据库来使用：
 输入create database Cheung，然后使用自己创建的数据库，输入use Cheung；
@@ -85,7 +87,9 @@ author: Chester Cheung
 
 向表中插入数据，就要使用Insert语句，格式为：
 
+```php
 	Insert into 表名(列名1,列名2,…)  values(值1,值2,…)
+```
 
 下面展示下插入一组完整的数据：
 
@@ -93,7 +97,9 @@ author: Chester Cheung
 
 要注意，我这里没有提前设置id的值能够自增，即没有在创建表时候写上：
 
+```php
 	id int not null auto_increment
+```
 
 所以表中的id列不能进行自加操作，因此需要在插入数据的时候将id这一项也写上，否则就会报错。
 

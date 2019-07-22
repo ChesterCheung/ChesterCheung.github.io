@@ -48,19 +48,17 @@ Item是一种类型参数，用于表示用例将会使用的某种类型的象�
 
 但是有个细节要注意的：由于某些原因，以下的操作是不允许的：
 
-
+```php
 	Item a = new Item();
-
-
+```
 
 创建泛型数据在Java中是不被允许的，需要借助类型转换才能达到目的：
 
-
+```php
 	Item a = (Item())new Object();
+```
 
-
-
-自动装箱
+## 自动装箱
 
 类型参数在使用时，必须被实例化成引用类型，因此Java有一种特殊的机制来使泛型代码能够处理原始的数据类型。还记得Java封装类的相关知识吗？如果忘了，请移步到我的博客回顾一下：
 [https://blog.csdn.net/weixin_44390145/article/details/87485778](https://blog.csdn.net/weixin_44390145/article/details/87485778)；

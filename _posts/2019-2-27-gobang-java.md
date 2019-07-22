@@ -27,6 +27,7 @@ author: Chester Cheung
 
 首先需要要做一个像画图板一样的界面，以便存放棋盘和功能功能板块，定义一个ChessMain类来继承JFrame，重写其中的抽象方法paint(Graphics g)，来绘制棋盘和棋子，
 
+```php
 	public class ChessMain extends JPanel implements Data{
 
 		public static void main(String [] args) {
@@ -57,9 +58,11 @@ author: Chester Cheung
 				g.drawLine(X + SIZE * i, Y, X + SIZE * i, Y + SIZE * (Row - 1));
 		}
 	}
+```
 
 如果在画横竖线时，直接输入长宽和线的数目，在后期想要修改格子大小时会很不方便，为了增强代码的灵活性，则要另外定义一个接口Data，把需要用到的数值定义为常量，在调用时直接调用常量就ok了，这样在修改棋盘或妻子大小时就会方便很多，ps.顺便别忘了让ChessMain类实现Data接口：
 
+```php
 	public interface Data {
 		public static final int X = 50;	//左边框宽度
 		public static final int Y = 50;	//上边框宽度
@@ -69,6 +72,7 @@ author: Chester Cheung
 		public static final int Colum = 15;	//竖线的数目
 		public static final int [][] arrays = new int [Row][Colum];	//数组用来存放下过棋子的位置信息
 	}
+```
 
 ![图示](https://img-blog.csdnimg.cn/20190317030530372.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
 
@@ -78,6 +82,7 @@ author: Chester Cheung
 
 当鼠标在棋盘上点击以下时，需要在棋盘相应的位置画上一颗棋子，这个功能的实现就需要用到鼠标事件监听机制，用来监听鼠标上的动作信息。由于MouseListener中的抽象方法没有全部用到，所以不必把所有方法全部重写，为了简洁，让ChessListener鼠标事件监听方法继承MouseAdapter监听类，就只需要重写用到的方法，而不用一股脑儿都重写出来。
 
+```php
 	public class ChessListener extends MouseAdapter implements Data , ActionListener {
 
 		private ChessMain chessmain;
@@ -101,6 +106,7 @@ author: Chester Cheung
 			}
 		}
 	}	
+```
 
 在下棋时，不仅要判断棋子的颜色，还要在下过一个颜色的棋子后，自动跳转到领完一种颜色的棋子上再画，因此需要定义一个Boolean类型的标志物flag来记录是黑子还是白子，给他默认定为true表示黑子。
 
@@ -116,6 +122,7 @@ author: Chester Cheung
 
 现在已经能正确下棋子了，接下来要做的就是如何判断输赢，大体分为四个方向：可以水平方向、竖直方向、左上右下、左下右上，重新定义一个ChessWin类，里面沿着每个方向进行移动，依次判断相同颜色的棋子是否连续，如果连续，则返回连续棋子的个数，连续个数小于5时返回false，否则返回true，用于输出下棋胜利的结果。
 
+```php
 	public class ChessWin implements Data {
 
 		public static boolean victory(int r, int c) {
@@ -146,4 +153,4 @@ author: Chester Cheung
 			return num;
 		}	//其余三个方向上的代码在这里就省略不重复给出了
 	}
-
+```

@@ -28,6 +28,7 @@ author: Chester Cheung
 
 下载好Java驱动包之后，把他按照常规操作添加到我们eclipse的环境变量中，preference中先添加后，在工程文件夹的Build Path中添加变量，然后就具备了调用摄像头的初步能力了，我在网上找到了一段代码，发现可以直接搬过来使用，而且一个错都没有报，所以在我自己调试过后也给大家了，对于小白来说copy是比较好上手的一种方式
 
+```php
 	public static void main(String[] args) throws InterruptedException {
 
 		//Webcam方法调用摄像头
@@ -56,6 +57,7 @@ author: Chester Cheung
 		window.setVisible(true);
 	
 	}
+```
 
 我自己在前人的基础上做出了一点修改写出了注释，也方便大家理解，自己也好查阅。这段代码修改完成后，我们就已经可以正常调用摄像头进行调用即时的图像了，在这个基础上可以再把平面图像处理的东西拿过来做些修改，就可以将摄像头拍到的图像进行实时加滤镜了。
 
@@ -67,6 +69,7 @@ author: Chester Cheung
 
 我们这个使用BufferedImage图片流的方法，将webcam.getImage()获取到的图像转化成图片流，给图片流赋画笔，进行滤镜效果的修改后，再将BufferedImage画出来，这样通过建立缓冲图层画图，相当于是在系统内先把图像提前画好，在将画好的图片drawImage到我们窗体界面上，这样可以极大的提高画图的效率。
 
+```php
 	//绘制模糊效果
 	public void draw1() {
 		
@@ -231,6 +234,7 @@ author: Chester Cheung
 	
 		Thread.yield();
 	}
+```
 
 ## 还要说明一点，这里的Thread.yield()方法的作用。
 

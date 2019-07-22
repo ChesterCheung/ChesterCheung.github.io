@@ -13,8 +13,9 @@ author: Chester Cheung
 之前我们已经简单的学习了Numpy和pandas的一些基础知识，get到了基本的数据分析操作；但是这些数据分析还不够直观，现在需要进一步学习更直观的可视化数据分析matplotlib。
 matplotlib的图像都位于Figure对象中，可以用plt.figure创建一个新的Figure
 
+```php
 	[In] fig = plt.figure()
-
+```
 
 
 
@@ -25,13 +26,17 @@ matplotlib的图像都位于Figure对象中，可以用plt.figure创建一个新
 
 这时候就会弹出来一个空窗口。plt.figure有一些属性，比如说figsize，就是确保当图片保存到磁盘时具有一定的大小和横纵比。注意，不能通过空的Figure绘图，必须用add_subplot创建一个或多个subplot才行：
 
+```php
 	[In] ax1 = fig.add_subplot(2, 2, 1)
+```
 
 这句话的意思是，图像应该是2X2的，且当前选中的是4个subplot中的第一个(编号从1开始)，如果再把后面两个subplot加进来
 
+```php
 	[In] ax2 = fig.add_subplot(2, 2, 2)
 	[In] ax3 = fig.add_subplot(2, 2, 3)
 	[In] ax4 = fig.add_subplot(2, 2, 4)
+```
 
 最终得到的图像是如下图所示的：
 
@@ -39,16 +44,19 @@ matplotlib的图像都位于Figure对象中，可以用plt.figure创建一个新
 
 这时如果发出绘图命令，matplotlib就会在最后一个用过subplot上进行绘制(如果没有就创建一个)，如果执行下列代码会出现的结果是：
 
+```php
 	[In] import numpy as np
 	[In] plt.plot(np.random.randn(50).cumsum(),'k--')
+```
 
 ![2](https://img-blog.csdnimg.cn/20190415025524919.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
 
 'k–'是一个线性选项，用于告诉matplotlib绘制黑色的虚线，上面那些由fig、.add_subplot所返回的对象是AxesSubplot对象，直接调用他们的实例方法就可以在其他空着的格子里面画了
 
+```php
 	[In] ax1.hist(np.random.randn(100), bins = 20,color = 'k',alpha = 0.3)
 	[In] ax2.scatter(np.arange(30),np.arange(30) + 3*np.random.randn(30))
-
+```
 
 ![3](https://img-blog.csdnimg.cn/20190415030050362.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
 
@@ -87,11 +95,15 @@ wspace和hspace用于控制宽度和高度的百分比，可以用作subplot之�
 matplotlib的plot函数除了接受一组XY坐标外，还可以接受一个表示颜色和线型的字符串缩写；
 若要执行根据x和y绘制绿色的虚线，可以执行以下代码：
 
+```php
 	ax.plot(x, y, 'g--')
+```
 
 不过一下代码也能达到同样的效果：
 
+```php
 	ax.plot(x, y, linestyle = '--', color = 'g')
+```
 
 常见的颜色都有固定的缩写，如果要使用其他颜色，可以通过制动其RGB值的形式使用(如，‘#CECECE’),完整的linestyle参见plot文档。
 
@@ -147,7 +159,9 @@ Y轴的设置方式和X轴完全相同，仅需要把X改成Y即可。
 注解可以通过text、arrow、annotate等函数进行添加。
 text可以将文本绘制在图表的指定坐标(x, y)，还可以加上一些自定义格式：
 
+```php
 	ax.text(x, y, 'Hello world!', family='monospace', fontsize=10)
+```
 
 这样就会在指定的X、Y位置以text的格式画出响应的文字。
 

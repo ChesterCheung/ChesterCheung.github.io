@@ -28,40 +28,53 @@ author: Chester Cheung
 
 在光标所在的位置输入：
 
+```php
 	conda create -n py36 python=3.6
+```
 
 计算机可能出现以下提示：
 
+```php
 	==> WARNING: A newer version of conda exists. <==
   
 	current version: 4.5.11
-	latest version: 4.6.7
+	latest version: 4.6.7	
+
+	Please update conda by running
 	
 
-Please update conda by running
-	
-
-$ conda update -n base -c defaults conda
+	$ conda update -n base -c defaults conda
+```
 
 不过千万别慌，只要按照提示进行输入就好，继续输入
 
+```php
 	conda update -n base -c defaults conda
+```
 
 在产生的**Proceed([y]/n)?**问题下，输入y继续配置进程，如果仍然产生error，则重复输入
 
+```php
 	conda create -n py36 python=3.6
+```
 
 早晚会出现一句
 
+```php
 	Solving environment: done
+```
 
 这个时候再输入
 
+```php
 	conda activate py36
+```
 
 就把Anaconda的从默认的base库切换到新创建的py36库目录下了。此时输入
 
+```php
 	conda info --envs
+```
 
 就能看到已经将base库切换到py36的库下面了：
 
@@ -69,35 +82,50 @@ $ conda update -n base -c defaults conda
 
 首先需要先安装一个升级版的pip：
 
+```php
 	You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+```
 
 安装成功后会提示出：
 
+```php
 	Successfully installed pip-19.0.3
+```
 
 然后开始正式安装pandas环境，在命令行输入
 
+```php
 	pip install pandas
+```
 
 安装pandas环境，成功安装后会出现
 
+```php
 	Successfully installed numpy-1.16.2 pandas-0.24.1 python-dateutil-2.8.0 pytz-2018.9 six-1.12.0
+```
 
 相同的操作安装numpy 和matplotlib
 
+```php
 	(py36) C:\Users\Lenovo>pip install numpy
 	Requirement already satisfied: numpy in d:\anaconda\envs\py36\lib\site-packages (1.16.2)
+```
 
 在安装matplotlib时，可能会耗费大量时间，此时需要确保网速足够高，否则很可能出现安装错误的提示，别担心，只要重复进行一下操作即可
 
+```php
 	(py36) C:\Users\Lenovo>pip install matplotlib
+```
 
 当pandas、numpy、matplotlib、jupyter notebook都安装好后，在命令行输入
 
+```php
 	conda list
+```
 
 就能看见已经安装好的环境
 
+```php
 	(py36) C:\Users\Lenovo>conda list
 	# packages in environment at D:\Anaconda\envs\py36:
 	#
@@ -161,11 +189,14 @@ $ conda update -n base -c defaults conda
 	wheel                     0.29.0                   py36_0    
 	widgetsnbextension        3.4.2                     <pip>
 	wincertstore              0.2                      py36_0
+```
 
 安装好以后还存在一个问题，之前一个学长在安装时碰到了奇怪的问题，当时显示的是无法连接到python，不知道为什么，装的notebook居然都是中文，后来发现是 no connection to kernel。这是版本问题，现在直接 pip install jupyter notebook 时，附带安装的 tornado 是6.0版本的，而能操作的是4.5.3版本的，
 博客的链接是：[https://www.cnblogs.com/csu-lmw/p/10502496.html](https://www.cnblogs.com/csu-lmw/p/10502496.html)
 最后具体的操作是
 
+```php
 	pip install tornado==4.5.3
+```
 
 在安装好所有的环境后，就可以开始愉快而痛苦的及其学习了，虽然也只是刚开始学习，还是什么都不懂的小白，但希望经过2019年的学习，将会有更大的收获，争取在明年能有机会参加机器学习的相关比赛，也算是为枯燥的大学生活多增添一抹新奇的色彩

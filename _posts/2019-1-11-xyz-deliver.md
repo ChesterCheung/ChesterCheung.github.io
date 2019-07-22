@@ -44,12 +44,14 @@ Class、abstract class、interface
 
 举个简单的例子：
 
+```php
 	Public claa UNStudent extends Student {
 	}
 	Public class Student extends People {
 	}
 	Public class People {
 	}
+```
 
 在这个事例中，表面上看，UNStudent类继承Student类，Student类继承People类，而People类没有继承的类；但实际上，UNStudent的父类是Student，Student的父类是People，People的父类是Object，同时，在整个继承链上，所有的子类都可以称为是Object父类的子类。
 
@@ -66,6 +68,7 @@ Class、abstract class、interface
 
 这个例子就说明了，把变量中的数据拷贝一份，传入到另一个变量中，这时候就是两个独立的变量了，我们对任何一个进行修改，对另外一个不会产生影响。
 
+```php
 	public class Test {
 	
 
@@ -85,7 +88,7 @@ Class、abstract class、interface
 			a += 1;
 		}
 	}
-
+```
 
 输出的结果是5
 
@@ -94,10 +97,10 @@ Class、abstract class、interface
 
 引用传递适用于Java的引用数据类型。除此以外，需要格外注意的是，数组也是属于引用数据类型。简单两个例子，
 
-```
-int a = new int [10];
+```php
+	int a = new int [10];
 
-int b = new int [] {1,2,2,3,3};
+	int b = new int [] {1,2,2,3,3};
 ```
 
 
@@ -107,7 +110,7 @@ int b = new int [] {1,2,2,3,3};
 
 对于引用传递来说，对象名中存储的是对象在堆内存中的首地址，而不是具体的值；传递时就是把对象名中的首地址，拷贝一份传入到另一个对象名(变量)中，此时两个或者n多个对象名中存储的地址就是一致的，不管用任意的哪一个对象名去修改他所指向对象的属性或方法，其他的对象名也会跟着改变，因为他们通过地址指向的变量是同一个，而不像值传递时改变一个对其余的对象没有影响。
 
-
+```php
 	Public class Test {
 
 
@@ -139,6 +142,7 @@ int b = new int [] {1,2,2,3,3};
 		}
 	
 	}
+```
 
 对相关内容做一个**注释**：Student stu1:声明一个对象名，叫做stu1
 = : 把内存空间的首地址赋给stu1

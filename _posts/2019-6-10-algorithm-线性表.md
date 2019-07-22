@@ -40,7 +40,9 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 
 线性表中所有数据元素都是同一个类型，所以占用的存储空间也大小相同，假设每一个数据元素所占的k个存储单元，那么线性表的第i+1个数据元素ai+1的存储位置和第i个数据元素ai的存储位置之间存在以下关系：
 
+```php
 	LOC(ai+1) = LOC(ai) + k
+```
 
 从上式中可以看出，它是用数据元素在机内物理位置上的相邻关系来映射数据元素在逻辑上的相邻关系，即每个数据元素的存储位置与线性表的首地址之间相差一个和数据元素在表中的序号成正比的常数。
 
@@ -87,6 +89,7 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 
 3.修改线性表的长度为n + 1
 
+```php
 	void INSERTLIST(Elem A[ ], int &n, int i, ElemType item)
 	{
 		int j;
@@ -97,6 +100,7 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 		A[i - 1] = item;
 		n++;
 	}
+```
 
 算法的时间复杂度为O(n)；
 
@@ -104,6 +108,7 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 1.将表的第i个数据元素至第n个数据元素依次向前移动一个位置
 2.修改线性表的长度为n - 1。
 
+```php
 	void DELETELIST(ElemType A[ ], int &n ,int i) {
 		int j;
 		if (i < 1 || i > n)
@@ -112,22 +117,26 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 			A[j - 1] = A[j];
 		n--;
 	}
+```
 
 算法的平均时间复杂度为O(n)；
 
 ## 确定某元素的位置
 
+```php
 	int LOCATE(ElemType A[ ], int n, ElemType item) {
 		for (i = 0; i < n; i++)
 			if (A[i] == item)
 				return i + 1;
 		return -1;
 	}
+```
 
 算法的时间复杂度为O(n)；
 
 ## 删除表中的重复元素
 
+```php
 	void PURGE(ElemType A[ ] , int n) {
 		int i = 0, j;
 		while (i < n){
@@ -140,6 +149,7 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 			i ++;
 		}
 	}
+```
 
 算法的时间复杂度为O(n^2)；
 
@@ -194,6 +204,7 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 
 **1.建立线型链表**
 
+```php
 	LinkList CREAT(int n) {
 		LinkList p, r, list = null;
 		ElemType a;
@@ -211,9 +222,11 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 		}
 		return (list);
 	}
+```
 
 **2.求线性链表的长度**
 
+```php
 	int LENGTH(LinkList list){
 		LinkList p = list;
 		int n = 0;
@@ -223,37 +236,45 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 		}
 		return n;
 	}
+```
 
 或者我们有种时间复杂度更低的算法，依靠递归来实现其功能
 
+```php
 	int LENGTH(LinkList list) {
 		if (list != null) 
 			return 1 + LENGTH(list -> link);
 		else
 			return 0;
 	}
+```
 
 **3.测试线性表是否为空表**
 
+```php
 	int ISEMPTY(LinkList list) {
 		return list->link == null;
 	}
+```
 
 此算法的时间复杂度与链表的长度无关，所以时间复杂度为O(1)；
 
 **4.确定item在线性表中的位置**
 
+```php
 	LinkList FIND(LinkList list, ElemType item) {
 		LinkList p = list;
 		while(p != null && p->data != item) 
 			p = p->link;
 		return p;
 	}
+```
 
 算法的时间复杂度为O(1)；
 
 **5.非空线性链表的第一个节点前插入链结点**
 
+```php
 	void INSERTLINK(LinkList &list, ElemType item) {
 		LinkList p;
 		p = (LinkList)malloc(sizeof(LNode));
@@ -261,6 +282,7 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 		p->link = list;
 		list =  p;
 	}
+```
 
 算法的时间复杂度为O(1)，与链表的长度无关，下图展示出了整个过程的逻辑思路
 
@@ -268,6 +290,7 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 
 **6.在非空线性链表的末尾插入一个链结点**
 
+```php
 	void INSERTLINK(LinkList list, ElemType item) {
 		LinkList p,r;
 		r = list;
@@ -293,11 +316,13 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 			q->link = p;
 		}
 	}
+```
 
 **8.在线性链表中第i个链结点后插入链结点**
 
 这里的i不是节点的地址，而只是一个序号，我们需要先从第一个节点出发，找到第i个节点，再将新的链结点插在后面。
 
+```php
 	int INSERTLINK(LinkList list, int i, ElemType item) {
 		int j;
 		j = 1;
@@ -315,9 +340,11 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 		q->link=p;
 		return 1;
 	}
+```
 
 **9.按值有序链接的线性链表中插入链结点**
 
+```php
 	void INSERTLINK(LinkList &list, ElemType item) {
 		LinkList p,q,r;
 		p = (LinkList)malloc(sizeof(LNode));
@@ -336,11 +363,13 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 			r->link = p;
 		}
 	}
+```
 
 **10.从非空线性表中删除q所指向的链结点**
 
 由于我们不知道被删除链结点的直接前驱结点，所以需要添加一步操作，就是寻找前驱链结点的过程，这个过程相对较容易，只要先将r指向链表的第一个链结点，然后反复执行r = r->link 直到r -> link == q，算法实现如下：
 
+```php
 	void DELETELINK(LinkList &list, LinkList q) {
 		LinkList r;
 		if (q == list) {
@@ -357,5 +386,6 @@ n为线性表的长度，是线性表中包含元素的个数；长度为0的线
 			}
 		}
 	}
+```
 
 后续还会继续补充其他关于线性表的应用......

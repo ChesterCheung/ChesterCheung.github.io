@@ -39,7 +39,7 @@ web在英文中是website网站的意思，用于表示Internet主机上供外�
 
 ![2](https://img-blog.csdnimg.cn/20190330023403107.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
 
-```
+```php
 	<Server>代表整个Servlet容器组件，可包含多个元素
 	<Service>包含一个元素或多个,这些Connector共享一个。
 	<Connector/>接收客户请求，向用户返回响应
@@ -55,7 +55,7 @@ web在英文中是website网站的意思，用于表示Internet主机上供外�
 
 如果有两家公司的web应用都发布在同一个Tomcat服务器上，可以为两家公司分别创建一个虚拟主机，尽管这两个服务器位于同一个主机，但是当客户端通过以上两个不同的虚拟主机名访问web应用时，会发现这两个应用分别拥有独立的主机，如需在web服务器中配置一个网站，需要使用Host元素进行配置，比如
 
-```
+```php
 	<Host name = "site1" appBase = "c:\\app"></Host>
 ```
 

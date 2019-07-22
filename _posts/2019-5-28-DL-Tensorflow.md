@@ -51,7 +51,7 @@ author: Chester Cheung
 我们现在来到模型本身：这个是标准的向前反馈的神经网络，信号总是向前反馈的，我们输入了x1，x2，x3三个节点；由于数据的简单，我们只设计了一个隐藏层来对数据进行处理，处理的具体过程是将三组数据分别乘以对应的权重w1，w2，w3，最终将各项得分加起来得到输出数据y，代码实现如下：
 
 
-
+```php
 	import tensorflow as tf
 	
 	x1 = tf.placeholder(dtype=tf.float32)
@@ -88,7 +88,7 @@ author: Chester Cheung
 	result = sess.run([x1,x2,x3,w1,w2,w3,y], feed_dict={x1:90,x2:80,x3:70})
 
 	print(result)
-
+```
 
 
 > ## 定义神经网络模型
@@ -100,13 +100,13 @@ author: Chester Cheung
 
 上述代码中
 
-
+```php
 	x1 = tf.placeholder(dtype=tf.float32)
 
 	x2 = tf.placeholder(dtype=tf.float32)
 
 	x3 = tf.placeholder(dtype=tf.float32)
-
+```
 
 我们在训练这个模型的时候，将x1，x2，x3作为输入数据输入到模型中，这种等待模型运行时才会输入的节点，我们称为占位符placeholder，就是在编写程序时还不确定输入什么数据，在模型运行时才知道输入什么数的就是占位符，相当于一个可以随时替换掉的临时变量。
 
@@ -125,8 +125,10 @@ author: Chester Cheung
 > ## 运用神经网络进行运算
 
 我们对神经网络的定义已经完成，下面要看如何在这个神经网络中输入数据并进行运算得到结果。	
-	
+
+```php	
 	sess = tf.Session()
+```
 
 这句语句定义了一个sess变量，其中包含了一个Tensorflow的会话session对象，可以简单把他看作是管理神经网络的一个对象，或者是之前建立的神经网络的一个实例化对象，有了他我们的神经网络就可以正常运行了。
 
@@ -137,23 +139,24 @@ author: Chester Cheung
 
 会话对象管理神经网络的第一步，就是先将所有的可变参数初始化，也就是给所有的可变参数一个初始值
 	
-
+```php
 	init = tf.global_variables_initializer()
 
 	sess.run(init)
+```
 
 sess.run的意思就是在sess这个函数中运行init这个初始化函数；具体给每个可变函数赋什么初值，是我们刚才定义的w1，w2，w3这三个可变参数决定的。或者也可以将刚刚的语句合并起来：
 	
-
+```php
 	sess.run(tf.global_variables_initializer())
-
+```
 
 然后，我们再次执行神经网络的计算：
 
 
-
+```php
 	result = sess.run([x1,x2,x3,w1,w2,w3,y], feed_dict={x1:90,x2:80,x3:70})
-
+```
 
 这次不是初始化，而是真正进行运算，sess.run函数的第一个参数是一个数组，代表我们需要查看哪些结果项；另一个参数是命名函数feed_dict，代表我们要输入的数据，最后再将result的值输出。
 
@@ -183,7 +186,7 @@ sess.run的意思就是在sess这个函数中运行init这个初始化函数；�
 ![2](https://img-blog.csdnimg.cn/20190524105813394.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
 
 
-
+```php
 	import tensorflow as tf
 
 	
@@ -239,7 +242,7 @@ sess.run的意思就是在sess这个函数中运行init这个初始化函数；�
 	result = sess.run([train,x1,x2,x3,w1,w2,w3,y,yTrain,loss], feed_dict={x1:98,x2:95,x3:87,yTrain:96})
 	
 	print(result)
-
+```
 
 
 这次多定义了一个占位符yTrain，这是在训练时传入每一组输入数据我们期待对应结果值的，一般称为：目标计算结果、目标值。
@@ -282,7 +285,7 @@ sess.run的意思就是在sess这个函数中运行init这个初始化函数；�
 所以我们通常将输入数据组织成向量来送入神经网络进行学习，向量中有几个数字，就是有几个维度，刚刚看到的就是一个三维向量。改进后的代码：
 
 
-
+```php
 	import tensorflow as tf
 
 
@@ -321,7 +324,7 @@ sess.run的意思就是在sess这个函数中运行init这个初始化函数；�
 	result = sess.run([train,x,w,y,loss], feed_dict={x:[98,95,87],yTrain:96})
 
 	print(result)
-
+```
 
 这样的运行效果和之前是一样的，仅做了几处改动，在变量x的定义语句中，其中增加了一个命名参数shape，是表示变量x的形态的，取值是[3]，表示输入占位符x的数据是一个有3个数字的数组，也就是一个三维向量；后面的w1，w2，w3也被相应的缩减成了一个三维向量w：
 
@@ -330,9 +333,9 @@ sess.run的意思就是在sess这个函数中运行init这个初始化函数；�
 其中tf.Variable函数的第一个参数还是定义这个可变参数的初始值，这里定义的初始值为[0,0,0]；
 
 
-
+```php
 	yTrain = tf.placeholder(shape=[], dtype=tf.float32)
-
+```
 
 yTrain因为只是普通数字，不是向量，所以用空的[ ]来代表他的形态
 
@@ -341,9 +344,9 @@ yTrain因为只是普通数字，不是向量，所以用空的[ ]来代表他�
 由于我们把原来3个隐藏层节点n1，n2，n3缩减成了一个向量n，输出层节点y的计算也要变：
 
 
-
+```php
 	y = tf.reduce_sum(n)
-
+```
 
 tf.reduce_sum函数的作用是把作为他的参数的向量中所有维度的值相加求和，和原来y = n1 + n2 + n3的含义是相同的。
 
@@ -351,7 +354,9 @@ tf.reduce_sum函数的作用是把作为他的参数的向量中所有维度的�
 
 后面对模型的训练过程基本是一样的，唯一不同在于输入数据时，所有的输入都简化成了一个x，所以feed_dict也要相应变化。
 
+```php
 	result = sess.run([train,x,w,y,loss], feed_dict={x:[90,80,70],yTrain:85})
+```
 
 > ## 简化后的神经网络模型
 

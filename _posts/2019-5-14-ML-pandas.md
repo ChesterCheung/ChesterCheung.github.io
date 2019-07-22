@@ -24,10 +24,11 @@ Pandas含有能使数据分析工作变得更快的高级数据结构和操作�
 
 
 
-
+```php
 	[In] from pandas import Series, DataFrame
-	
-[Out] import pandas as pd
+
+	[Out] import pandas as pd
+```
 
 > ## Pandas的数据结构
 
@@ -37,6 +38,7 @@ Pandas含有能使数据分析工作变得更快的高级数据结构和操作�
 
 Series是一种类似于一维数组的对象，他由2部分组成：一组数据和一组索引(数据标签)：
 
+```php
 	[In] from pandas import Series, DataFrame
 	[In] obj = Series(['a','b','c','d'],index = [9,2,3,4])
 	[In] obj
@@ -45,16 +47,20 @@ Series是一种类似于一维数组的对象，他由2部分组成：一组数�
 		  3    c
 		  4    d
 		  dtype: object
+```
 
 Series 的字符串表现形式为，索引在左边，数据在右边，如果我们没有为数据创造一个索引，则会自动创建一个从0–N-1的索引。
 
 与数组的操作类似，我们可以通过索引来选取Series中的某个或多个值。
 
+```php
 	[In] obj[2]
 	[Out] 'b'
+```
 
 有关于Numpy的数组运算(根据布尔类型进行过滤、标量乘法、应用数学函数等)都会保留索引和值之间的联系
 
+```php
 	[In] obj[obj.index>5]
 	[Out] 9    a
 	  dtype: object
@@ -65,6 +71,7 @@ Series 的字符串表现形式为，索引在左边，数据在右边，如果�
 		3    cc
 		4    dd
 		dtype: object
+```
 
 可以将Series看作是一个有序的字典，因为他是索引值到数据值的一个映射，还可以用在许多原本需要字典参数的函数中去。
 
@@ -83,6 +90,7 @@ Series 的字符串表现形式为，索引在左边，数据在右边，如果�
 
 可以用pandas来处理检测缺失数据，用到isnull和notnull函数，对于缺失的数据，在pandas中我们用到NaN来表示(not a number)
 
+```php
 	[In]pd.isnull(obj2)
 	[Out]a     True
    	 b    False
@@ -96,6 +104,7 @@ Series 的字符串表现形式为，索引在左边，数据在右边，如果�
 	  c     True
 	  d     True
 	  dtype: bool
+```
 
 Series对象本身及其索引都有一个name属性，该属性跟pandas其他的功能关系非常密切；索引可以直接进行修改，使用.index就可以通过赋值的方式就地修改了，这里就不再多说。
 
@@ -108,35 +117,43 @@ Series对象本身及其索引都有一个name属性，该属性跟pandas其他�
 DataFrame是一个表格形式的数据结构，它含有一组有序的列，DataFrame既含有行索引，也含有列索引，可以简单看作Series组成的字典。
 构建DataFrame的方法有很多，直接传入一个等长的列表或Numpy数组就是最好的办法：
 
+```php
 	[In] from pandas import Series , DataFrame
 	[In] import pandas as pd
 	[In] data = {'a':[1,2,3], 'b':[6,7,8],'c':[11,12,13], 'd':[11,22,33], 'e':[77,88,99]}
 	[In] data_frame = DataFrame(data)
 	[In] data_frame
 	[Out]
+```
 
 ![1](https://img-blog.csdnimg.cn/20190414154740356.png)
 
 他的结果中会自动加上索引，且全部都被有序排列，如果通过设置属性
 
+```php
 	data_frame = DataFrame(data_frame, columns = ['a', 'e', 'b', 'd', 'c'])
+```
 
 就能给DataFrame的列按照指定的顺序进行排列；
 和Series一样，如果传入的列在数据中找不到，就会产生一个NaN值；
 
+```php
 	[In] data_frame['a'] = np.arange(3) #将列表或数组的值赋给某个列时，其长度必须和DataFrame的长度相匹配
 	[Out] 
 	 a	b	c	d	e
 	 0	0	6	11	11	77
 	 1	1	7	12	22	88
 	 2	2	8	13	33	99
+```
 
 列可以通过赋值的方式来进行修改，比如我们给‘a’这一列进行修改，就能看出来他的值被我们修改了。
 
 
 另外一种创建DataFrame的方式就是通过嵌套字典(就是字典里面的字典)，如果将它传给DataFrame，就会被解释成：外层的字典作为列索引，内层的字典作为行索引；同样我们也可以对数组进行转置：
 
+```php
 	[In] data_frame = data_frame.T
+```
 
 下面给出可以输入到DataFrame构造器的数据
 
@@ -175,6 +192,7 @@ pandas的索引对象负责管理轴标签和其他元数据，构建Series和Da
 
 reindex的作用是创建一个适应新索引的新对象
 
+```php
 	[In] obj = Series([1,2,3,4,5], index = ['e', 'b', 'c', 'a', 'd'])
 	[In] obj
 	[Out] e    1
@@ -191,6 +209,7 @@ reindex的作用是创建一个适应新索引的新对象
 		d    5
 		e    1
 		dtype: int64
+```
 
 对于时间序列等有序数据，重新索引时可能需要一些插值处理，method即可达到这样的效果，
 使用ffill或pad向前填充(或搬运)，

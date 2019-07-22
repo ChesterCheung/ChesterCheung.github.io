@@ -37,6 +37,7 @@ author: Chester Cheung
 
 通过把界面上之前画的像素存储起来，在重绘方法时再画出，进而实现图像重绘。在存储像素时，把窗体中的内容转换为一个BufferedImage的图形对象 (在使用时需要重写BufferedImage中的getImage方法)，调用Robot中的robot.createScreenCapture方法获取像素点；重新定义一个数组getRGBarrys，用它来存放像素点数据，再重新定义一个Capture方法，里面执行获取像素并存放进入数组中去，具体代码如下:
 
+```php
 	public BufferedImage getImage() {
 
 		// TODO Auto-generated method stub
@@ -72,9 +73,11 @@ author: Chester Cheung
 		}
 	
 	}
+```
 
 同时还要，继承JFrame类，在Drawing的主函数中重写paint(Graphics g)方法，别忘记使用super调用父类中的代码，然后再添加新的代码。
 
+```php
 	public void paint(Graphics g) {
 
 		super.paint(g);
@@ -109,6 +112,7 @@ author: Chester Cheung
 		}
 
 	}
+```
 
 ### 但这种方法实现重绘有一个缺点，或者说还未实现的一个问题，就是：
 
