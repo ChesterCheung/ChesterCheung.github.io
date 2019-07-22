@@ -15,7 +15,8 @@ author: Chester Cheung
 ## 1.接口
 定义接口的关键字：interface
 定义接口的格式：
-	
+
+```php	
 	Public interface 接口名 extends 接口,…{
 	
 		//定义常量
@@ -27,12 +28,7 @@ author: Chester Cheung
 		Public abstract 返回值数据类型 抽象方法名(数据类型 参数名…)；
 
 	}
-
-
-
-
-
-
+```
 
 有几点需要注意的东西：
 1.接口绝对不能实例化对象
@@ -47,17 +43,22 @@ author: Chester Cheung
 
 **格式：**
 	
+```php
 	Public class 类名 extends 类名 implements 接口，…{
 	
 	}
+```
+
 这里要注意：类实现接口后，类必须要实现接口中所有的抽象方法，包括接口的和接口的父类的抽象方法。
 
 
 **使用接口的作用是：**
 
+```php
 	丰富类的继承关系；
 
 	利用接口的强制规则，在团队开发的时候用户项目框架的搭建。
+
 
 ## 2.事件监听机制
 

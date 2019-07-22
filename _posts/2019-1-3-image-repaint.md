@@ -29,9 +29,9 @@ author: Chester Cheung
 
 我们所绘制图形的数据都存储在内存中，在创建窗体时我们已经定义了窗体的大小，如果我们再次改变窗体大小的时候，原来的窗体就不满足显示的需求。这时候就会自动调用组件的绘制方法，将窗体上所有的组件再重新绘制一次，但是不会执行我们所绘制的图形的代码，所以我们看到的就是绘图板界面还在，但是界面上之前绘制的图形消失了。操作系统重绘窗体上的组件时，调用了paint方法，这个方法是定义在JFrame和JPanel中都有的，叫做
 
-
+```php
 	Public void paint (Graphics g) { }
-
+```
 
 想要改变这个方法，就必须定义一个类继承组件，然后才能重写paint方法。最重要的一点就是，该类必须继承JFrame类或是JPanel类，不然不可以重写paint方法。
 
@@ -70,6 +70,7 @@ author: Chester Cheung
 三、具体实现：
 重新定义一个Data类用来储存数据，在该类得方法中将绘图的相关数据赋给类的属性，如果有某组特殊的数据，需要对方法进行重载，通过改变参数的类型和个数进行重载；例如，对图片的绘制时，就需要多存放一组ImageIcon数据，此时就要对Data类的方法进行重写。
 
+```php
 	public int x1,y1,x2,y2,width,height;
 
 	public String type;
@@ -115,9 +116,11 @@ author: Chester Cheung
 	this.icon = icon;
 
 	}	
+```
 
 把数据存放到内存以后，还要完成最后一步，就是在Data类中定义重绘方法，在重写调用重绘方法时，把存储在数组中的图形再画一遍。
 
+```php
 	public void paint (Graphics g) {
 	
 	super.paint(g);
@@ -139,6 +142,7 @@ author: Chester Cheung
 				break;
 	
 	}
+```
 
 将原本的Drawing类继承父类JFrame，实例化Drawing对象drawing时，如果在drawing对象中找不到的方法就会自动到父类JFrame中去调用，这时就不用多余的实例化JFrame对象，只需要用this关键字表示drawing对象就能调用JFrame中的方法对窗体界面进行设计了。(重点、难点)
 
