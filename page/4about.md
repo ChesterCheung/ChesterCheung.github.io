@@ -11,7 +11,7 @@ type: page
 
 ## 关于我
 
-<iframe src="https://github.com/zhyChesterCheung/zhyChesterCheung.github.io/blob/master/page/1.jpg?raw=true" width="307" height="437" frameBorder="0"></iframe>
+<iframe src="https://github.com/zhyChesterCheung/zhyChesterCheung.github.io/blob/master/page/1.jpg" width="307" height="437" frameBorder="0"></iframe>
 
 目前就读于中南大学本科			电子信息工程专业
 
