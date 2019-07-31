@@ -12,6 +12,13 @@ author: Chester Cheung
 
 > #### ——记美国之行
 
+
+
+
+
+
+
+
 这是本人小白第一次来到美帝，美国之旅收获不小；常言道，读万卷书不如行万里路，行万里路不如阅人无数。除了知识技能的学习之外，增长见识、体味人生也是一种学习和进步，因此这趟来到美国想见识见识国外的世界是怎样的，以便为自己选择以后的路做准备。
 
 1.美国更注重人权，服务业尤其注重服务的质量(在中国飞机延误就延误了，没有任何赔偿方法；而美国航空公司会对你的飞机延误造成的损失进行赔偿，飞机延误后对饭钱、酒店钱、的士钱都给予了安排和报销)
@@ -46,4 +53,4 @@ This is the first time that such a Xiaobai like me came to the US .The feeling t
 
 7. The resources of the United States are unmatched in the country, so most Americans are wasting their national resources unrestrainedly, eating a lot of food, air conditioning has never been turned off, food is a bit too bad, just throw it away. It will definitely not save unnecessary expenses because it saves money.
 
-8. I have only heard of Chinese-style crossings in the past. Now I have seen how Americans cross the road to discover how direct it is: the US regulations are for people, the traffic lights are also for cars, and there is no need to watch traffic lights when crossing the road. .
+8. I have only heard of Chinese-style crossings in the past. Now I have seen how Americans cross the road to discover how direct it is: the US regulations are for people, the traffic lights are also for cars, and there is no need to watch traffic lights when crossing the road. 
