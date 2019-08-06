@@ -14,6 +14,8 @@ author: Chester Cheung
 
 > Also its my first time to finish one deep learning work myself.
 
+My works are all based on Kaggle platform to have a better operation and are more convinent  to commit and modify. Also this is the general way 
+
 [DL of Cats & Dogs Binary Classification](https://www.kaggle.com/chestercheung/dl-of-cats-dogs-binary-classification)
 
 Keras of Tensorflow has a directory-centric api but kaggle kernels cannot write too many files. We read in the images and rescale the values to between 0 and 1. You then make an ImageDataGenerator that preprocesses the data. If you overfit augment the data and add dropout.
