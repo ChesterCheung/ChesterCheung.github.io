@@ -18,6 +18,11 @@ author: Chester Cheung
 
 Keras of Tensorflow has a directory-centric api but kaggle kernels cannot write too many files. We read in the images and rescale the values to between 0 and 1. You then make an ImageDataGenerator that preprocesses the data. If you overfit augment the data and add dropout.
 
+
+
+
+
+
 The final result of this project is basically above 60 percent. And I'll continue to work on this task to have more understanding of DL model and Keras. 
 
 ### Another project work with one partner to solve the sale problem.
