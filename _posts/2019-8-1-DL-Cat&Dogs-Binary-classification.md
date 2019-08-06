@@ -14,7 +14,7 @@ author: Chester Cheung
 
 > Also its my first time to finish one deep learning work myself.
 
-My works are all based on Kaggle platform to have a better operation and are more convinent  to commit and modify. Also this is the general way 
+My works are all based on Kaggle platform to have a better operation and are more convinent  to commit and modify. Also this is the general way to doing some works about machine learning and deep learning and data science.
 
 [DL of Cats & Dogs Binary Classification](https://www.kaggle.com/chestercheung/dl-of-cats-dogs-binary-classification)
 
