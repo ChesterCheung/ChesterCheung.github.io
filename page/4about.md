@@ -11,7 +11,7 @@ type: page
 
 ## 关于我
 
-<iframe src="https://github.com/zhyChesterCheung/zhyChesterCheung.github.io/blob/master/page/1.jpg" width="307" height="437" frameBorder="0"></iframe>
+![个人照片](1.jpg)
 
 目前就读于中南大学本科			电子信息工程专业
 
@@ -22,7 +22,7 @@ type: page
 
 参加2019华中HackFun黑客马拉松
 
-游览过阿里、百度、MSRA、网易、搜狐等多家大型互联网公司、AI大厂
+参观过阿里、百度、MSRA、网易、搜狐等多家大型互联网公司、AI大厂
 
 
 曾经对自己的前途和方向一度感到迷茫，没有找到自己读大学的目的何在，但在多位优秀的学长学姐的支持和鼓励之下，我慢慢地找到了方向，对自己的未来有了一个比较明确的规划和发展。
