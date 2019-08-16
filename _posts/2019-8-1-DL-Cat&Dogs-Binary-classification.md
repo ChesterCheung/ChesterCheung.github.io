@@ -31,10 +31,12 @@ The final result of this project is basically above 60 percent. And I'll continu
 
 [Feature engineering, xgboost](https://www.kaggle.com/chestercheung/freshman-in-feature-engineering)
 
-And the final result of this one is almost about Top 28% , which is not so bad for a freman in feature engineering . 
+And the final result of this one is almost about Top 28% , which is not so bad for a freman in feature engineering. 
 
 > **During my works, I've found that there are 2 key points during these works.**
 
 1. Generally, according to CV problem, the first thing to do is image pre-processing, which is transforming images into RGB dataframes. And also, we simply change the data into 3 dimensions' problem. 
 
 2. If we train data directly without any process, the accuracy of the model is pretty low. So we'll do some thing to improve the accuracy. Basically, we can have some operations for images to swift, move or something like that.
+
+3.Finally, our work have got great progress in the last commitment.
