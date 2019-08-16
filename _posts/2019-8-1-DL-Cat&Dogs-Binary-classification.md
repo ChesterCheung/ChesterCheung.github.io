@@ -39,4 +39,5 @@ And the final result of this one is almost about Top 28% , which is not so bad f
 
 2. If we train data directly without any process, the accuracy of the model is pretty low. So we'll do some thing to improve the accuracy. Basically, we can have some operations for images to swift, move or something like that.
 
-3.Finally, our work have got great progress in the last commitment.
+3. Finally, our work have got great progress in the last commitment.
+
