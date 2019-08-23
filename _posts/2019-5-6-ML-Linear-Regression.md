@@ -9,12 +9,11 @@ author: Chester Cheung
 * content
 {:toc}
 
-
 线性回归作为回归算法中的较为基础的算法，所以先从线型回归入手。
 
-
-
 参考论文：[http://cs229.stanford.edu/notes-spring2019/cs229-notes1.pdf](http://cs229.stanford.edu/notes-spring2019/cs229-notes1.pdf)
+
+
 
 
 
@@ -26,9 +25,7 @@ author: Chester Cheung
 我们先来看一个简单的例子，通过房间的面积和卧室的数目来预测房价。那么这里的X就是属于R^2的维向量，我们把x1设为居住面积，x2设为卧室的数量(初期把问题简化，做到最小可实现)。
 
 
-
 ## 建立线性方程
-
 
 
 为了进行机器学习，我们必须决定怎样表达预测值h，我们选用比较常用的一种表达方法，只要你有基本的数学基础，就一定不会陌生：

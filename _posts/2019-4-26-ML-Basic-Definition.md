@@ -9,7 +9,6 @@ author: Chester Cheung
 * content
 {:toc}
 
-
 ## 机器学习
 
 机器学习(Machine Learning)，是一门基于统计学的学习，他其中包含了很多的数学知识，所以，数学没学好，ML两行泪。
@@ -21,6 +20,8 @@ Arthur Samuel (1959)是这样评价机器学习的: **Machine Learning is the fi
 **就是让机器在没有明确的程序的情况下，给予机器自我学习的一种能力
 
 这在本质上和人类学习新事物的过程是相同的： **都是基于模型的构建**。
+
+
 
 
 
