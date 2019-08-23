@@ -19,7 +19,7 @@ author: Chester Cheung
 
 [https://github.com/zhyChesterCheung/HoloLens-Development](https://github.com/zhyChesterCheung/HoloLens-Development)
 
-![2019-8-23-0](https://zhyChesterCheung.github.io/photos/2019-8-23-0.png)
+![2019-8-23-0](https://zhyChesterCheung.github.io/photos/2019-8-23-0.jpg)
 
 
 
