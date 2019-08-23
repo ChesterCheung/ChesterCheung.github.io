@@ -14,7 +14,7 @@ author: Chester Cheung
 
 身为一名土生土长的社会主义青年，从小熏陶在全心全意为人民服务的大环境中，经过12年的小学中学教育，受到高考的残酷洗礼之后，我自信在思想和政治方向是没有错误的。但是“读万卷书不如行万里路，行万里路不如阅人无数”，总是生活在一种单一的社会模式下，对于增长见识开拓视野未必是件好事；偶尔到西方制度模式下体验学习，感受不同文化的熏陶，在未来成长路上也是件好事。
 
-![America_1]("https://zhyChesterCheung.github.io/_posts/photos/America1.jpg")
+![America_1](America1.jpg)
 
 
 
@@ -84,3 +84,4 @@ author: Chester Cheung
 
 > **With great power comes great responsibility.**
 
+(America1.jpg) : {{ "America1.jpg" | prepend : site.imgrepo }}
