@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title:  "ML Three Elements of Statistical Learning"
 categories: MachineLearning
@@ -11,28 +11,23 @@ author: Chester Cheung
 
 统计学习的三要素：模型、策略、算法，简单表示为：
 
-
-
 # 方法 = 模型 + 策略 + 算法
-
 
 ## 模型
 
-
-
 统计学习的首要目的是要想好需要学习出什么样的模型，在监督学习中，模型就是所要学习的条件概率分布或决策函数(简单来说，模型就是我们要使用的一种函数)。模型的假设空间(hypothesis space)包含有所有可能的条件概率分布或决策函数。比如举个简单的例子：假设决策函数是输入变量的线型函数，那么模型的假设空间就是所有的线型函数所构成的集合，所以假设空间中的模型一般有无数多个。
-
-
-
-
-
-
-
 
 ![1](https://img-blog.csdnimg.cn/2019043023100327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
 
-我们这里说由决策函数表示的模型称为非概率模型，由条件概率表示的模型是概率模型，为了简便起见，当论及模型时，有时也可以只用其中的一种模型。
 
+
+
+
+
+
+
+
+我们这里说由决策函数表示的模型称为非概率模型，由条件概率表示的模型是概率模型，为了简便起见，当论及模型时，有时也可以只用其中的一种模型。
 
 
 ## 策略

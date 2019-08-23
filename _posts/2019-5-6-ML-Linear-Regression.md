@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title:  "ML Linear Regrssion"
 categories: MachineLearning
@@ -14,9 +14,9 @@ author: Chester Cheung
 
 
 
-参考论文：[http://cs229.stanford.edu/notes-spring2019/cs229-notes1.pdf
+参考论文：[http://cs229.stanford.edu/notes-spring2019/cs229-notes1.pdf](http://cs229.stanford.edu/notes-spring2019/cs229-notes1.pdf)
 
-](http://cs229.stanford.edu/notes-spring2019/cs229-notes1.pdf)
+
 
 
 

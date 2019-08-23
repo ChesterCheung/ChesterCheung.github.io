@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title:  "佩剑温酒走江湖 -- 华中HackFun"
 categories: thinking
@@ -14,14 +14,17 @@ author: Chester Cheung
 **输、输、输、输、输、输、输、输、输——赢！**
 ——HackFun比赛有感
 
-
-
-
-
-
 这是最近的最后一个比赛了，其他项目也陆续都结题，这次打完就要用一段时间来沉淀下自己，总结这段时间的收获与体会，争取下次参赛能够做出强者的姿态！见识到很多大牛，了解到外面的世界，眼界宽阔不少；但实力一定要能配得上自己的眼界，否则付出的功夫可能都是泡沫浮云。
 
 ![1](https://img-blog.csdnimg.cn/20190528210547152.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5MDE0NQ==,size_16,color_FFFFFF,t_70)
+
+
+
+
+
+
+
+
 
 > ## 惨痛的开场
 
