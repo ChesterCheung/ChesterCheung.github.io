@@ -84,4 +84,4 @@ author: Chester Cheung
 
 > **With great power comes great responsibility.**
 
-[America_1] : {{ "America1.jpg" | prepend : imgrepo }}
+[America_1] : {{ "America1.jpg" | prepend : site.imgrepo }}
