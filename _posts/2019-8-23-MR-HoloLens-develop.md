@@ -9,7 +9,6 @@ author: Chester Cheung
 * content
 {:toc}
 
-
 ### 基于MRTK的Microsoft HoloLens开发
 
 > 背景介绍
@@ -19,6 +18,8 @@ author: Chester Cheung
 所幸，在团队夜以继日连续几天的开发环境配置/查看源码/项目开发的努力下，最终将初期任务圆满完成，我已经把初版Demo的项目源码传到了GitHub上，以下是项目地址：
 
 [https://github.com/zhyChesterCheung/HoloLens-Development](https://github.com/zhyChesterCheung/HoloLens-Development)
+
+![2019-8-23-0](https://zhyChesterCheung.github.io/photos/2019-8-23-0.png)
 
 
 
