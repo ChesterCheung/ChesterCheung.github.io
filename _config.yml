@@ -41,7 +41,7 @@ google_analytics_id: UA-144379127-1 # google 分析追踪id
 # Build settings
 markdown: kramdown
 
-imgrepo: 'https://zhyChesterCheung.github.io/_post/photos/'
+imgrepo: 'https://zhyChesterCheung.github.io/_posts/photos/'
 
 kramdown:
   input: GFM
