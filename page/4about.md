@@ -1,4 +1,4 @@
-﻿---
+---
 layout: page
 title: About
 permalink: /about/
@@ -15,8 +15,7 @@ type: page
 
 目前就读于中南大学本科			电子信息工程专业
 
-中南大学透明计算实验室做Deep Learning方向
-
+中南大学智能驾驶实验室做雷达点云数据的聚类深度学习
 
 参加2019清华大学GSF Innovation Accelerator获得第6名
 

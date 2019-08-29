@@ -25,6 +25,12 @@ author: Chester Cheung
 
 
 
+<video id="video" controls="" preload="none" poster="">
+    <source id="mp4" src="https://zhyChesterCheung.github.io/photos/2019movie.mp4" type="video/mp4">
+</video>
+
+
+
 
 
 
