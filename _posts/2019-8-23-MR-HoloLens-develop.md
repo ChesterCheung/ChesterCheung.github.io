@@ -25,7 +25,7 @@ author: Chester Cheung
 
 
 
-<video id="video" controls="" preload="none" poster="">
+<video id="video" controls="" preload="none" poster="https://zhyChesterCheung.github.io/photos/2019-08-30.png">
     <source id="mp4" src="https://zhyChesterCheung.github.io/photos/2019movie.mp4" type="video/mp4">
 </video>
 
