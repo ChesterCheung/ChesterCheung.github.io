@@ -25,13 +25,13 @@ author: Chester Cheung
 
 
 
-<video id="video" controls="" preload="none" poster="https://zhyChesterCheung.github.io/photos/2019-08-30.png">
+
+> 下面我们将放出项目的部分演示视频，仅供大家参考
+
+
+<video id="video" controls="" preload="none" poster="">
     <source id="mp4" src="https://zhyChesterCheung.github.io/photos/2019movie.mp4" type="video/mp4">
 </video>
-
-
-
-
 
 
 > 开发必备条件
