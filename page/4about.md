@@ -32,6 +32,10 @@ CS这个东西刚接触的时候说实话我也是一脸懵逼，但是经过一
 
 在CS的路上以后还会越走越远，每一步都有巨大的坑在等着去填，希望我能达到自己的目标！
 
+
+Hello everyone, I’m Chester, you can call me that or my Chinese name Zhang. I’m from Central South University and major in electronic engineering. Used to finish big data project in Missouri University. Now I’m work on data analysis about Autonomous driving. I’m good at machine learning and deep learning model. I’m an Android & iOS developer, and giving speech/lecture is fitting me as well. Welcome anyone love tec to add me or comment about me.
+
+
 ## 联系我
 
 * GitHub：[Chester Cheung](https://github.com/zhyChesterCheung)
