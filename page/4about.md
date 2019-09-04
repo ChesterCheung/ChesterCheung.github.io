@@ -17,7 +17,7 @@ type: page
 
 中南大学智能驾驶实验室做雷达点云数据的聚类深度学习
 
-参加2019清华大学GSF Innovation Accelerator获得第6名
+参加2019清华大学GSF Innovation Accelerator获得第3名
 
 参加2019华中HackFun黑客马拉松
 
