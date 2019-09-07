@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "网易游戏一面"
-categories: OS
-tags: OS Linux
+categories: thinking
+tags: thinking
 author: Chester Cheung
 ---
 
