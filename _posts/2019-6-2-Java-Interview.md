@@ -14,9 +14,16 @@ author: Chester Cheung
 
 Java虚拟机是一个可以执行.class字节码文件的虚拟机进程，Java源文件被编译成能被Java虚拟机执行的.class 字节码文件。Java被设计成允许应用程序可以在任意平台运行，而不需要程序员为每一个平台专门重写或者是单独编译。Java的跨平台不是Java源程序的跨平台，Java源代码先被javac编译成二进制的.class字节码文件(其实Java的跨平台指的是.class文件的跨平台)，.class文件再运行在jvm上，jvm中的Java解释器会将其解释成对应平台的机器码文件进行执行。
 
+
+
+
+
+
+
+
 ### 2. Java中JDK和JRE的区别
 
-JRE是Java runtime environment，是Java运行时环境，摆阔Java 虚拟机/Java基础类库/支持文件，他不包含有开发工具JDK/编译器/调试器等工具
+JRE是Java runtime environment，是Java运行时环境，包括Java 虚拟机/Java基础类库/支持文件，他不包含有开发工具JDK/编译器/调试器等工具
 
 JDK是Java Ddevelopment kit，是完整的Java软件开发包，其中包含了JRE，编译器和其他工具，可以让开发者开发/编译/执行Java应用程序
 
@@ -32,7 +39,7 @@ static变量在Java中是属于类的，他在所有的实例中都是一样的�
 
 ### 4.什么是Java自动装箱？
 
-自动装箱是Java编译器在基本数据类型和对应的对象包装类型之间做的一个转化，比如：将int转化成integer，double转化成Double等等，反之，就是自动装箱。Java支持的s数据类型有两种：一种是基本数据类型，包括byte，char，int，float，double，short，boolean，long；另一种是引用类型，比如String，其实是对象的引用。
+自动装箱是Java编译器在基本数据类型和对应的对象包装类型之间做的一个转化，比如：将int转化成integer，double转化成Double等等，反之，就是自动拆箱。Java支持的s数据类型有两种：一种是基本数据类型，包括byte，char，int，float，double，short，boolean，long；另一种是引用类型，比如String，其实是对象的引用。
 
 JVM中虚拟栈中，引用类型声明的变量在内存中实际存储的是对象的地址，创建的对象实质在堆中，通过地址来找到堆中的对象的过程，就是引用类型。
 
