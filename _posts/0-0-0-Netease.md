@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "网易游戏一面"
+title:  "Netease Interview"
 categories: thinking
 tags: thinking
 author: Chester Cheung
