@@ -24,7 +24,12 @@ author: Chester Cheung
 
 **持久性（Durable）**：事务完成之后，它对于数据的修改是永久性的，即使出现系统故障也能够保持。可以通过数据库备份和恢复来实现，在系统发生奔溃时，使用备份的数据库进行数据恢复。
 
-+ MySQL 默认采用自动提交模式。也就是说，如果不显式使用 START TRANSACTION 语句来开始一个事务，那么每个查询都会被当做一个事务自动提交。
+
+
+
+
+
+* MySQL 默认采用自动提交模式。也就是说，如果不显式使用 START TRANSACTION 语句来开始一个事务，那么每个查询都会被当做一个事务自动提交。
 
 ![mysql1](https://raw.githubusercontent.com/ZXZxin/ZXBlog/master/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/advance/images/shiwu_1.png)
 
