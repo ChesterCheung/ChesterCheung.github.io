@@ -13,9 +13,11 @@ type: page
 
 ![个人照片](1.jpg)
 
+[个人简历](https://drive.google.com/open?id=1L1SCmHD9R0rQM1Zvo3_R811knmnK2ebY)
+
 目前就读于中南大学本科			电子信息工程专业
 
-中南大学智能驾驶实验室做雷达点云数据的聚类深度学习
+中南大学智能驾驶实验室做3维雷达点云数据的聚类深度学习
 
 参加2019清华大学GSF Innovation Accelerator获得第3名
 
