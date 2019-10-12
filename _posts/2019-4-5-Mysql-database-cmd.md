@@ -1,7 +1,7 @@
-﻿---
+---
 layout: post
 title:  "Mysql经典高逼格/命令行操作"
-categories: Mysql
+categories: database
 tags:  database Mysql
 author: Chester Cheung
 ---

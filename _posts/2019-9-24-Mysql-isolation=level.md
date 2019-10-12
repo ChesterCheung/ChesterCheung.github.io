@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Mysql事务和隔离级别"
-categories: Mysql
+categories: database
 tags: Mysql database
 author: Chester Cheung
 ---
