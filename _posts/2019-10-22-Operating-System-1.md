@@ -60,7 +60,7 @@ Definition: 如果一个进程在用户态需要使用内核态的功能，就�
 
 ### 操作系统的体系结构
 
-![OS-1](photos/OS-1.png)
+![OS-1](https://github.com/zhyChesterCheung/photos/OS-1.png)
 
 > 通过程序状态寄存器PSW中的某个标记位来标记当前处理器的状态
 
@@ -105,7 +105,6 @@ Definition：
 |异常(内中断)|应用程序未知的行为|同步|杀死或重新执行这些未知的应用程序指令|
 |系统调用|应用程序请求操作系统提供服务|异步或者同步|等待和持续|
 
-Question：
 
 #### Question
 
