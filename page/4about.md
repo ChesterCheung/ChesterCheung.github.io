@@ -15,19 +15,22 @@ type: page
 
 [个人简历](https://drive.google.com/open?id=1L1SCmHD9R0rQM1Zvo3_R811knmnK2ebY)
 
-目前就读于中南大学本科			电子信息工程专业
+目前就读于中南大学本科			电子信息工程
 
-中南大学智能驾驶实验室做3维雷达点云数据的聚类深度学习
+中南大学智能驾驶实验室做3维雷达点云数据的聚类深度学习算法
 
 参加2019清华大学GSF Innovation Accelerator获得第3名
 
 参加2019华中HackFun黑客马拉松
+
+参加2019上海XdHack黑客马拉松
 
 参观过阿里、百度、MSRA、网易、搜狐等多家大型互联网公司、AI大厂
 
 
 曾经对自己的前途和方向一度感到迷茫，没有找到自己读大学的目的何在，但在多位优秀的学长学姐的支持和鼓励之下，我慢慢地找到了方向，对自己的未来有了一个比较明确的规划和发展。
 
+所以自己在写代码成为一名程序猿的同时，也在做一些别的尝试；2019年7月份，我在与几位学长的合作下也成立了第一家属于自己的公司，在互联网人才服务领域开始创业尝试，算是我大学生活的别样的娱乐方式吧～😂
 
 CS这个东西刚接触的时候说实话我也是一脸懵逼，但是经过一段时间的琢磨之后，发现有好多东西都是相通的，只是从不同的路径在走，但最终都会汇集到同一个终点，道法万物就是这个道理。
 
@@ -40,7 +43,7 @@ CS这个东西刚接触的时候说实话我也是一脸懵逼，但是经过一
 
 Hello everyone, I’m Chester, you can call me that or my Chinese name Zhang. I’m from Central South University and major in electronic engineering. Used to finish big data project in Missouri University. Now I’m work on data analysis about Autonomous driving. I’m good at machine learning and deep learning model. I’m an Android & iOS developer, and giving speech/lecture is fitting me as well. 
 
-Welcome anyone love tec to add me or comment about me. If you get interested in me, welcome to add my Wechat code, so thst we can communicate more. Thx
+Welcome anyone love tec to add me or comment about me. If you get interested， welcome to add my Wechat code, so thst we can communicate more. Thx a lot ～~
 
 ![个人微信](WechatCode.jpg)
 
