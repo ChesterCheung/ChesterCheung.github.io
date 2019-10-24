@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Operating System "
+title:  "Operating System 1"
 categories: OS
 tags: OS Linux
 author: Chester Cheung

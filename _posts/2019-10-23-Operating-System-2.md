@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Operating System "
+title:  "Operating System 2"
 categories: OS
 tags: OS Linux
 author: Chester Cheung
@@ -23,6 +23,12 @@ author: Chester Cheung
 **注意区分**：进程和进程实体：进程是动态的，进程实体是静态的
 
 ![OS-2](https://zhychestercheung.github.io/photos/OS-2.png)
+
+
+
+
+
+
 
 #### PCB(进程管理块):
 
@@ -93,7 +99,7 @@ PCB中应包括：1、进程标识信息：本进程的标识、父进程的标�
 
 ![OS-7](https://zhychestercheung.github.io/photos/OS-7.png)
 
-#### Question：进程创建的主要工作是什么？
+#### $$ Question：进程创建的主要工作是什么？
 
 1. 接收进程运行现场初始值，初始优先级、执行程序描述，其它资源等参数。
 2. 请求分配进程描述块PCB空间，得到一个内部数字进程标识。 
