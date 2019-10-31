@@ -31,7 +31,7 @@ author: Chester Cheung
 
 * MySQL 默认采用自动提交模式。也就是说，如果不显式使用 START TRANSACTION 语句来开始一个事务，那么每个查询都会被当做一个事务自动提交。
 
-![mysql1](https://raw.githubusercontent.com/ZXZxin/ZXBlog/master/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/advance/images/shiwu_1.png)
+![mysql1](https://github.com/zhyChesterCheung/ZXBlog/raw/master/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/advance/images/shiwu_1.png)
 
 1. 只有满足一致性，事务的执行结果才是正确的
 
@@ -50,7 +50,7 @@ author: Chester Cheung
 
 如果在一个程序员完成并提交事务之前，另一个程序员不能访问同一文件，则可避免此问题，这有点类似Java里面的Synchronize锁的一些用法。
 
-![mysql2](https://raw.githubusercontent.com/ZXZxin/ZXBlog/master/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/advance/images/shiwu_2.png)
+![mysql2](https://github.com/zhyChesterCheung/ZXBlog/raw/master/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/advance/images/shiwu_2.png)
 
 > 脏读
 
@@ -58,7 +58,7 @@ author: Chester Cheung
 
 一句话总结：事务B读取到了事务A已修改但尚未提交的的数据，还在这个数据基础上做了操作。此时，如果A事务回滚Rollback，B读取的数据无效，不符合一致性要求，这个就是脏读。
 
-![mysql3](https://raw.githubusercontent.com/ZXZxin/ZXBlog/master/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/advance/images/shiwu_3.png)
+![mysql3](https://github.com/zhyChesterCheung/ZXBlog/raw/master/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/advance/images/shiwu_3.png)
 
 > 不可重复读(non-repeaded reads)
 
@@ -70,7 +70,7 @@ author: Chester Cheung
 
 同时操作，事务1分别读取事务2操作时和提交后的数据，读取的记录内容不一致。不可重复读是指在同一个事务内，两个相同的查询返回了不同的结果。
 
-![mysql](https://raw.githubusercontent.com/ZXZxin/ZXBlog/master/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/advance/images/shiwu_4.png)
+![mysql4](https://github.com/zhyChesterCheung/ZXBlog/raw/master/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/advance/images/shiwu_4.png)
 
 > 幻读
 
@@ -79,6 +79,8 @@ author: Chester Cheung
 一个事务T1按相同的查询条件重新读取以前检索过的数据，却发现其他事务T2插入了满足其查询条件的新数据，这种现象就称为“幻读”。（和可重复读类似，但是事务T2的数据操作仅仅是插入和删除，不是修改数据，读取的记录数量前后不一致）
 
 一句话总结：事务A 读取到了事务B提交的新增数据，不符合隔离性。
+
+![mysql5](https://github.com/zhyChesterCheung/ZXBlog/raw/master/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/advance/images/shiwu_5.png)
 
 ### 事务隔离级别
 
