@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Java Interview Practice"
-categories: OS
-tags: OS Linux
+title:  "Java Basic Knowledge Point"
+categories: Java
+tags: Java OS
 author: Chester Cheung
 ---
 
@@ -49,7 +49,7 @@ JVM中虚拟栈中，引用类型声明的变量在内存中实际存储的是�
 
 ### 6. Java支持多继承吗？
 
-Javan不支持多继承，只支持单继承，但是Java的接口支持多继承，即一个子类可以实现多个父类的接口，接口是用来拓展对象的功能的，子类继承了多个父类接口，说明子类拓展了多个父类的功能。
+Java不支持多继承，只支持单继承，但是Java的接口支持多继承，即一个子类可以实现多个父类的接口，接口是用来拓展对象的功能的，子类继承了多个父类接口，说明子类拓展了多个父类的功能。
 
 ### 7. 接口和抽象类的区别是什么？
 
@@ -69,7 +69,7 @@ Java提供和支持创建抽象类和接口，本质上**抽象是对类的抽�
 
 ### 9.线程和进程的区别是什么？
 
-进程是执行着的应用程序，而线程是进程内部的一个执行序列；进程是资源分配的单元，线程是cpu调度和执行的单元；进程间切换代价大，线程间切换代价小；进程拥有的资源多，线程拥有的资源少；一个进程j可以有多个线程，线程又叫轻量级的进程，多个线程共享进程的资源。
+进程是执行着的应用程序，而线程是进程内部的一个执行序列；进程是资源分配的单元，线程是cpu调度和执行的单元；进程间切换代价大，线程间切换代价小；进程拥有的资源多，线程拥有的资源少；一个进程可以有多个线程，线程又叫轻量级的进程，多个线程共享进程的资源。
 
 ### 10. 创建线程有几种不同的方式，喜欢哪一种？
 
@@ -81,18 +81,15 @@ Java提供和支持创建抽象类和接口，本质上**抽象是对类的抽�
 
 ![线程](https://zhyChesterCheung.github.io/photos/xiancheng.jpg)
 
-1. 新建new：新创建了一个线程对象
+1. 创建-新建new：新创建了一个线程对象
 
-2. 可运行runnable：线程对象创建后，其他线程调用了该对象的start()方法，该状态的线程位于可运行的线程池中，等待被线程调度选中，获得cpu的使用权
+2. 就绪态-可运行runnable：线程对象创建后，其他线程调用了该对象的start()方法，该状态的线程位于可运行的线程池中，等待被线程调度选中，获得cpu的使用权
 
-3. 运行running：可运行状态的线程获得了cpu的时间片，执行程序代码
+3. 运行态-运行running：可运行状态的线程获得了cpu的时间片，执行程序代码
 
-4. 阻塞block：线程因为某种原因放弃了cpu的使用权，也即让出了time slice，暂时停止运行，直到线程进入runnable的状态才有机会再次获得cpu的time slice转到运行状态，其中阻塞分为3种情况：
-
+4. 阻塞态-阻塞block：线程因为某种原因放弃了cpu的使用权，也即让出了time slice，暂时停止运行，直到线程进入runnable的状态才有机会再次获得cpu的time slice转到运行状态，其中阻塞分为3种情况：
 (1) 等待阻塞：运行的线程执行wait()方法，jvm会将该线程放入等待队列
-
 (2)同步阻塞：运行的线程在获得对象的同步锁时，若该同步锁被别的线程占用，则jvm会把该线程放入线程池lock pool中
-
 (3)其他阻塞：运行的线程执行Thread.sleep()或者join方法，或者发出I/O请求，jvm会把他设为阻塞状态
 
 5. 死亡：线程run，main方法执行结束，或者因异常退出了run方法，则该线程结束生命周期，死亡的线程不可复生。
@@ -127,6 +124,11 @@ Java允许多线程并发控制，当多个线程同时操作一个可共享的�
 
 ### 15. Java集合类框架的基本接口有哪些？
 
+•    Collection：代表一组对象，每一个对象都是它的子元素。
+•    Set：不包含重复元素的Collection。
+•    List：有顺序的collection，并且可以包含重复元素。
+•    Map：可以把键(key)映射到值(value)的对象，键不能重复。
+
 总共有两大接口：Collection和Map，一个是元素集合，一个是键值对的集合；
 
 其中List和Set实现了Collection接口，一个是有序元素集合，一个是无序元素集合；而ArrayList和LinkedList实现了List接口，HashSet实现了Set接口；
@@ -135,4 +137,80 @@ HashMap，TreeMap和HashTable实现了Map接口，并且HashTable是线程安全
 
 ![线程2](https://zhyChesterCheung.github.io/photos/Array.jpg)
 
+### 什么是迭代器(Iterator)？
+
+Iterator接口提供了很多对集合元素进行迭代的方法。每一个集合类都包含了可以返回迭代器实例的迭代方法。迭代器可以在迭代的过程中删除底层集合的元素。
+
+### Iterator和ListIterator的区别是什么？
+
+下面列出了他们的区别：
+•    Iterator可用来遍历Set和List集合，但是ListIterator只能用来遍历List。
+•    Iterator对集合只能是前向遍历，ListIterator既可以前向也可以后向。
+•    ListIterator实现了Iterator接口，并包含其他的功能，比如：增加元素，替换元素，获取前一个和后一个元素的索引，等等。
+
+### Java中的HashMap的工作原理是什么？
+
+Java中的HashMap是以键值对(key-value)的形式存储元素的。HashMap需要一个hash函数，它使用hashCode()和equals()方法来向集合/从集合添加和检索元素。当调用put()方法的时候，HashMap会计算key的hash值，然后把键值对存储在集合中合适的索引上。如果key已经存在了，value会被更新成新值。HashMap的一些重要的特性是它的容量(capacity)，负载因子(load factor)和扩容极限(threshold resizing)。
+
+### HashMap和Hashtable有什么区别？
+
+ HashMap和Hashtable都实现了Map接口，因此很多特性非常相似。但是，他们有以下不同点：
+•    HashMap允许键和值是null，而Hashtable不允许键或者值是null。
+•    Hashtable是同步的，而HashMap不是。因此，HashMap更适合于单线程环境，而Hashtable适合于多线程环境。
+•    HashMap提供了可供应用迭代的键的集合，因此，HashMap是快速失败的。另一方面，Hashtable提供了对键的列举(Enumeration)。
+
+**一般认为Hashtable是一个遗留的类。**
+
+### 数组(Array)和列表(ArrayList)有什么区别？什么时候应该使用Array而不是ArrayList？
+
+下面列出了Array和ArrayList的不同点：
+•    Array可以包含基本类型和对象类型，ArrayList只能包含对象类型。
+•    Array大小是固定的，ArrayList的大小是动态变化的（动态数组）。
+•    ArrayList提供了更多的方法和特性，比如：addAll()，removeAll()，iterator()等等。
+•    对于基本类型数据，集合使用自动装箱来减少编码工作量。但是，当处理固定大小的基本数据类型的时候，这种方式相对比较慢。
+
+### ArrayList和LinkedList有什么区别？
+ArrayList和LinkedList都实现了List接口，他们有以下的不同点：
+•    ArrayList是基于索引的数据接口，**它的底层是数组**。它可以以O(1)时间复杂度对元素进行随机访问。与此对应，LinkedList是以元素链表的形式存储它的数据，每一个元素都和它的前一个和后一个元素链接在一起，在这种情况下，查找某个元素的时间复杂度是O(n)。
+•    相对于ArrayList，LinkedList的插入，添加，删除操作速度更快，因为当元素被添加到集合任意位置的时候，不需要像数组那样重新计算大小或者是更新索引。
+•    LinkedList比ArrayList更占内存，因为LinkedList为每一个节点存储了两个指针，一个指向前一个元素，一个指向下一个元素。
+
+### 如何权衡是使用无序的数组还是有序的数组？
+
+有序数组最大的好处在于查找的时间复杂度是O(log n)，而无序数组是O(n)。有序数组的缺点是插入操作的时间复杂度是O(n)，因为值大的元素需要往后移动来给新元素腾位置。相反，无序数组的插入时间复杂度是常量O(1)。
+
+### HashSet和TreeSet有什么区别？
+
+HashSet是由一个hash表来实现的，因此，它的元素是无序的。add()，remove()，contains()方法的时间复杂度是O(1)。
+另一方面，**TreeSet是由一个树形的结构来实现的，它里面的元素是有序的。**因此，add()，remove()，contains()方法的时间复杂度是O(logn)。
+
+```php
+List的子类特点
+        ArrayList:
+            底层数据结构是数组，查询快，增删慢
+            线程不安全，效率高
+        Vector:
+            底层数据结构是数组，查询快，增删慢
+            线程安全，效率低
+        LinkedList:
+            底层数据结构是链表，查询慢，增删快
+            线程不安全，效率高
+```
+
+### sleep() 和 wait() 有什么区别?
+sleep是线程类（Thread）的方法，导致此线程暂停执行指定时间，给执行机会给其他线程，但是监控状态依然保持，到时后会自动恢复。调用sleep不会释放对象锁。
+
+wait是Object类的方法，对此对象调用wait方法导致本线程放弃对象锁，进入等待此对象的等待锁定池，只有针对此对象发出notify方法（或not ifyAll）后本线程才进入对象锁定池准备获得对象锁进入运行状态。
+
+### error和exception有什么区别?
+error表示恢复不是不可能但很困难的情况下的一种严重问题。比如说内存溢出。不可能指望程序能处理这样的情况。
+
+exception表示一种设计或实现问题。也就是说，它表示如果程序运行正常，从不会发生的情况。
+
+### GC是什么? 为什么要有GC?
+GC是垃圾收集的意思（Gabage Collection）,内存处理是编程人员容易出现问题的地方，忘记或者错误的内存回收会导致程序或系统的不稳定甚至崩溃，Java提供的GC功能可以自动监测对象是否超过作用域从而达到自动回收内存的目的。当程序员创建对象时，GC就开始监控这个对象的地址、大小以及使用情况。Java语言没有提供释放已分配内存的显示操作方法,因此程序员不能实时的调用垃圾回收器对某个对象或所有对象进行垃圾回收。
+
+### java中有几种类型的流？JDK为每种类型的流提供了一些抽象类以供继承，请说出他们分别是哪些类？
+
+字节流，字符流。字节流继承于InputStream \ OutputStream，字符流继承于InputStreamReader \ OutputStreamWriter。在java.io包中还有许多其他的流，主要是为了提高性能和使用方便。
 
