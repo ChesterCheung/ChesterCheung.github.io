@@ -40,9 +40,42 @@ author: Chester Cheung
 
 #### 管道通信pipe
 
+> 主要用于父子进程间通信
+
 ![OS-9](https://zhychestercheung.github.io/photos/OS-9.png)
 
 “管道”指用于连接读写进程的共享文件，称为pipe文件（内存中开辟固定大小的缓冲区）
+
+```php
+@Test
+public void testPipe() throws IOException {
+    // 1、获取通道
+    Pipe pipe = Pipe.open();
+
+    // 2、获取sink管道，用来传送数据
+    Pipe.SinkChannel sinkChannel = pipe.sink();
+
+    // 3、申请一定大小的缓冲区
+    ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
+    byteBuffer.put("123232142345234".getBytes());
+    byteBuffer.flip();
+
+    // 4、sink发送数据
+    sinkChannel.write(byteBuffer);
+
+    // 5、创建接收pipe数据的source管道
+    Pipe.SourceChannel sourceChannel = pipe.source();
+    // 6、接收数据，并保存到缓冲区中
+    ByteBuffer byteBuffer2 = ByteBuffer.allocate(1024);
+    byteBuffer2.flip();
+    int length = sourceChannel.read(byteBuffer2);
+
+    System.out.println(new String(byteBuffer2.array(), 0, length));
+
+    sourceChannel.close();
+    sinkChannel.close();
+}
+```
 
 **注意：**
 
@@ -108,7 +141,7 @@ author: Chester Cheung
 
 ## 六、CPU的调度
 
-从就绪队列中按照一定的算法选择一个进程并将CPOU时间分配给他调度，实现进程的并发
+从就绪队列中按照一定的算法选择一个进程并将CPU时间分配给他调度，实现进程的并发
 
 **三种调度:高级调度(作业调度)、中级调度(内存调度)、低级调度(进程调度)**
 
