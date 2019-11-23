@@ -30,6 +30,7 @@ CS这个东西刚接触的时候说实话我也是一脸懵逼，但是经过一
 
 前段时间总结了下自己进入大学这一年半时间内参加过的比赛，感觉收获还是颇丰的，虽然拿奖的比较少，只有个别几个拿到了奖，但是对我个人综合能力的提升真的作用明显，下面就简单汇总下：
 
+
 1. 2019年中国高校智能机器人创意大赛
 2. 2019年全国大学生创新创业大赛
 3. 2019年中国互联网+大学生创新创业大赛
@@ -57,13 +58,13 @@ Welcome anyone love tec to add me or comment about me. If you get interested， 
 
 ## 联系我
 
-* GitHub：[Chester Cheung](https://github.com/zhyChesterCheung)
+* GitHub：[zhyChesterCheung](https://github.com/zhyChesterCheung)
 * email：cheung.zhy.csu@gmail.com / zhy_cheung@csu.edu.cn
 * QQ number：2640617395
-* [Weibo](http://weibo.com/ChesterCheung)
-* [知乎](https://www.zhihu.com/people/ChesterCheung)
+* [Weibo](https://weibo.com/u/5689093900)
+* [知乎](https://www.zhihu.com/people/la-la-la-la-la-la-la-ji-9)
 * [Facebook](https://www.facebook.com/chester.cheung.3538)
-* [Twitter](https://twitter.com/ChesterCheung)
+* [Twitter](https://twitter.com/ChesterCheung4)
 
 ## Comments
 
