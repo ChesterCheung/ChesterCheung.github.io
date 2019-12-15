@@ -58,13 +58,14 @@ Welcome anyone love tec to add me or comment about me. If you get interested， 
 
 ## 联系我
 
-* GitHub：[zhyChesterCheung](https://github.com/zhyChesterCheung)
-* email：cheung.zhy.csu@gmail.com / zhy_cheung@csu.edu.cn
-* QQ number：2640617395
+* [GitHub](https://github.com/zhyChesterCheung)
 * [Weibo](https://weibo.com/u/5689093900)
 * [知乎](https://www.zhihu.com/people/la-la-la-la-la-la-la-ji-9)
 * [Facebook](https://www.facebook.com/chester.cheung.3538)
 * [Twitter](https://twitter.com/ChesterCheung4)
+* [LinkedIn](https://www.linkedin.com/in/chestercheung)
+* email：cheung.zhy.csu@gmail.com / zhy_cheung@csu.edu.cn
+* QQ number：2640617395
 
 ## Comments
 

@@ -1,4 +1,4 @@
-﻿# Welcome to Jekyll!
+# Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely need to edit after that.
@@ -7,20 +7,20 @@
 
 # Site settings
 title: 张瀚元的专属博客
-brief-intro: Passionate & Hardworking Coder
+brief-intro: A Passionate Coder
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://zhyChesterCheung.github.io" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
 # other links
-twitter_username: #Chestercheung4
-facebook_username: #Chester Cheung
+twitter_username: ChesterCheung4
+facebook_username: chester.cheung.3538
 github_username: zhyChesterCheung
 email: cheung.zhy.csu@gmail.com
-weibo_username: Chester Cheung
-zhihu_username: ChesterCheung
-linkedIn_username: ChesterCheung
+weibo_username: 5689093900
+zhihu_username: la-la-la-la-la-la-la-ji-9
+linkedIn_username: chestercheung
 dribbble_username:
 
 description_footer: 来自张瀚元的个人专栏！
