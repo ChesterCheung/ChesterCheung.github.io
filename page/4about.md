@@ -56,6 +56,8 @@ Welcome anyone love tec to add me or comment about me. If you get interested， 
 
 ![个人微信](WechatCode.jpg)
 
+![个人博客](Chester'blog.png)
+
 ## 联系我
 
 * [GitHub](https://github.com/zhyChesterCheung)
