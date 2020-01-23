@@ -13,7 +13,7 @@ author: Chester Cheung
 
 > 背景介绍
 
-前段时间刚回到长沙，碰巧远大张公子的建筑公司最新开发出一种建筑材料，想要借助HoloLens MixedReality进行现场动态展示，所以我们团队将项目承接了过来，进行HoloLens真机的入门级别项目开发，并后期计划教公司的技术人员快速上手开发流程。在对方投资的一台HoloLens真机的协助下，基于MRTK进行了一些入门开发，开发过程中由于国内进行相关开发的团队过少，且微软官方z近期已将原HoloToolKit改版为MixedRealityToolKit也即MRTK，能搜到的有关HoloLens开发的博客很少，且大都存在时效性，给现今开发Hololens的团队带来了巨大的挑战；而官方文档又只有英文版且对入门级别不太友好，造成开发过程中难题不断。
+前段时间刚回到长沙，碰巧远大张公子的建筑公司最新开发出一种建筑材料，想要借助HoloLens MixedReality进行现场动态展示，所以我们团队将项目承接了过来，进行HoloLens真机的入门级别项目开发，并后期计划教公司的技术人员快速上手开发流程。在对方投资的一台HoloLens真机的协助下，基于MRTK进行了一些入门开发，开发过程中由于国内进行相关开发的团队过少，且微软官方近期已将原HoloToolKit改版为MixedRealityToolKit也即MRTK，能搜到的有关HoloLens开发的博客很少，且大都存在时效性，给现今开发Hololens的团队带来了巨大的挑战；而官方文档又只有英文版且对入门级别不太友好，造成开发过程中难题不断。
 
 所幸，在团队夜以继日连续几天的开发环境配置/查看源码/项目开发的努力下，最终将初期任务圆满完成，我已经把初版Demo的项目源码传到了GitHub上，以下是项目地址：
 
@@ -46,11 +46,11 @@ Unity3d|Unity 2018.4.6f1及以上版本
 
 ### OS系统推荐
 
-强烈推荐使用windows进行U3d的开发及Visual Studio的调试，因为HoloLens本来就是微软自家的孩子，用来开发当然理所因当，而其他系统的兼容性和支持性就明显不如windows那么友好👬了，因为k配置环境到一半就会发现少了一个类似SDK的东西，叫做UWP(universal windows platform)，x想将项目部署到HoloLens平台上，这个UWP是必须的，否则下一步就不要进行了，我劝你换台电脑再继续开发。
+强烈推荐使用windows进行U3d的开发及Visual Studio的调试，因为HoloLens本来就是微软自家的孩子，用来开发当然理所因当，而其他系统的兼容性和支持性就明显不如windows那么友好👬了，因为k配置环境到一半就会发现少了一个类似SDK的东西，叫做UWP(universal windows platform)，想将项目部署到HoloLens平台上，这个UWP是必须的，否则下一步就不要进行了，我劝你换台电脑再继续开发。
 
 > 对于macOS系统，我z找遍了网上所有说mac可以做开发的博客，并最终总结出：mac开发b需要装双系统或者虚拟机，其实还是逃不开windows10系统，所以劝你还是乖乖认命吧。
 
-### Visual Studiopj配置
+### Visual Studio配置
 
 Visual Studio的配置是否正确决定了项目能否成功从Unity中构建导出，进而设计能否在Hololens生成APP及调试。下面是团队经多次尝试后确认的正确配置所需选择的，建议大家不要轻易修改：
 
