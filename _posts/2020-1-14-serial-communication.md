@@ -2,7 +2,7 @@
 layout: post
 title:  "串口通信相关参数"
 categories: OS
-tags: OS web
+tags: OS web Test
 author: Chester Cheung
 ---
 

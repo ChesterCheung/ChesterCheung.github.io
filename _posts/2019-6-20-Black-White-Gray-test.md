@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "黑盒/白盒/灰盒测试"
-categories: OS
-tags: OS IT
+categories: Test
+tags: OS Test
 author: Chester Cheung
 ---
 
